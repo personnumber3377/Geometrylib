@@ -1,0 +1,10 @@
+line a=-1.455 b=-1 c=517.0
+line0.name = halwayline
+line
+line0.name = side
+point x=278.1011235955055 y=260.42
+point0.name = shitpoint
+point x=556.202247191011 y=520.8484042595016
+side.set_values_two_points shitpoint point0
+intersect side halwayline
+quit

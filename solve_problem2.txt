@@ -1,0 +1,9 @@
+circle
+circle0.name = mycircle1
+mycircle1.xc = 0
+mycircle1.yc = 0
+mycircle1.r = 1
+point x=((1+2+0)/3) y=(sqrt(3)/3)
+point0.name = mypoint
+maxdistobjdot mycircle1 mypoint
+quit

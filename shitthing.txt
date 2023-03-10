@@ -1,0 +1,229 @@
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Running commands from file triangleproblempart2.txt.
+Command string: line a=1.455 b=-1 c=-517.0
+fewfeewfewfewf
+objects at the start: []
+{'a': '1.455', 'b': '-1', 'c': '-517.0'}
+*arguments_thing : {'a': '1.455', 'b': '-1', 'c': '-517.0'}
+bullshit: {'a': '1.455', 'b': '-1', 'c': '-517.0'}
+bullshit: {'a': '1.455', 'b': '-1', 'c': '-517.0'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['line0']
+objects after appending new_object: ['line0']
+global_objects after appending new_object: ['line0']
+objects at the end: ['line0']
+[92mCreated new object.[0m
+Command string: line0.name = halwayline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: halwayline
+result: None
+Command string: line
+fewfeewfewfewf
+objects at the start: ['halwayline']
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['halwayline']
+global_objects at the start: ['halwayline']
+objects after creation of new_object : ['halwayline']
+gregregregrr
+global_objects at the start: ['halwayline', 'line0']
+objects after appending new_object: ['halwayline', 'line0']
+global_objects after appending new_object: ['halwayline', 'line0']
+objects at the end: ['halwayline', 'line0']
+[92mCreated new object.[0m
+Command string: line0.name = side
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: side
+result: None
+Command string: point x=0 y=0
+fewfeewfewfewf
+{'x': '0', 'y': '0'}
+*arguments_thing : {'x': '0', 'y': '0'}
+bullshit: {'x': '0', 'y': '0'}
+bullshit: {'x': '0', 'y': '0'}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['halwayline', 'side']
+global_objects at the start: ['halwayline', 'side']
+objects after creation of new_object : ['halwayline', 'side']
+gregregregrr
+global_objects at the start: ['halwayline', 'side', 'point0']
+objects after appending new_object: ['halwayline', 'side', 'point0']
+global_objects after appending new_object: ['halwayline', 'side', 'point0']
+Command string: point x=556.202247191011 y=520.8484042595016
+fewfeewfewfewf
+{'x': '556.202247191011', 'y': '520.8484042595016'}
+*arguments_thing : {'x': '556.202247191011', 'y': '520.8484042595016'}
+bullshit: {'x': '556.202247191011', 'y': '520.8484042595016'}
+bullshit: {'x': '556.202247191011', 'y': '520.8484042595016'}
+the_object.name == point1
+setting parameter x to this: x1
+the_object.name == point1
+setting parameter y to this: y1
+Names of global objects at the end of common_arg_stuff: ['halwayline', 'side', 'point0']
+global_objects at the start: ['halwayline', 'side', 'point0']
+objects after creation of new_object : ['halwayline', 'side', 'point0']
+gregregregrr
+global_objects at the start: ['halwayline', 'side', 'point0', 'point1']
+objects after appending new_object: ['halwayline', 'side', 'point0', 'point1']
+global_objects after appending new_object: ['halwayline', 'side', 'point0', 'point1']
+Command string: side.set_values_two_points point0 point1
+thing
+bullshitrgregreg
+command: side.set_values_two_points point0 point1
+self.method_arg_types : [['point', 'point'], ['point', 'point'], [], []]
+name_str: point0
+['halwayline', 'side', 'point0', 'point1']
+---------------------------
+halwayline
+side
+point0
+point1
+---------------------------
+obj.name == halwayline
+obj.name == side
+self.method_arg_types : [['point', 'point'], ['point', 'point'], [], []]
+name_str: point1
+['halwayline', 'side', 'point0', 'point1']
+---------------------------
+halwayline
+side
+point0
+point1
+---------------------------
+obj.name == halwayline
+obj.name == side
+obj.name == point0
+==========================================
+point1.x : 0 point1.y: 0
+point2.x : 556.202247191011 point2.y: 520.8484042595016
+==========================================
+-1*point1.x+point2.x == 556.202247191011
+-1*point1.x == 
+type(point1.x) == <class 'str'>
+xv: 556.202247191011
+yv: 520.8484042595016
+0000000
+yv: 520.8484042595016
+x0: 0.0
+xv: 556.202247191011
+y0: 0.0
+string_oof_1 : -(520.8484042595016/(0.0*520.8484042595016-556.202247191011*0.0))
+string_oof_2 == 556.202247191011/(0.0*520.8484042595016-556.202247191011*0.0)
+self.a ==zoo
+self.b ==zoo
+result: None
+Command string: intersect side halwayline
+fewfeewfewfewf
+Args : ['intersect', 'side', 'halwayline']
+obj_name1 : side
+obj_name2 : halwayline
+name_str: side
+['halwayline', 'side', 'point0', 'point1']
+---------------------------
+halwayline
+side
+point0
+point1
+---------------------------
+obj.name == halwayline
+name_str: halwayline
+['halwayline', 'side', 'point0', 'point1']
+---------------------------
+halwayline
+side
+point0
+point1
+---------------------------
+poopooo
+obj1: =======================
+Type: line
+a = zoo
+b = zoo
+c = 1
+name = side
+=======================
+		
+obj2: =======================
+Type: line
+a = 1.455
+b = -1
+c = -517.0
+name = halwayline
+=======================
+		
+================================================
+object1 : =======================
+Type: line
+a = zoo
+b = zoo
+c = 1
+name = side
+=======================
+		
+object2 : =======================
+Type: line
+a = 1.455
+b = -1
+c = -517.0
+name = halwayline
+=======================
+		
+object1 : <class '__main__.line'>
+object2 : <class '__main__.line'>
+================================================
+oof
+oof22
+oof
+oof22
+All equations as a list: [Eq(zoo*x + zoo*y + 1, 0), Eq(1.455*x - y - 517.0, 0)]
+[zoo*x + zoo*y + 0 + 1, 291*x/200 - y - 517]
+[x, y]
+[zoo*x + zoo*y + 0 + 1, 291*x/200 - y - 517]
+[x, y]
+[[zoo*x + zoo*y + 0 + 1, 291*x/200 - y - 517]]
+[-1, zoo*x + zoo*y]
+[517, 291*x/200 - y]
+Matrix([[zoo, zoo, -1], [291, -200, 103400]])
+result: {x: nan, y: nan}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: {x: nan, y: nan}[0m
+Command string: quit
+fewfeewfewfewf
+[92mThank you for using geometrylib! See you again soon![0m

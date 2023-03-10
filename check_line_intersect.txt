@@ -1,0 +1,4 @@
+line a=1 b=2 c=3
+line a=4 b=5 c=6
+intersect line0 line1
+quit

@@ -1,0 +1,13 @@
+circle
+circle0.name = mycircle1
+mycircle1.xc = 0
+mycircle1.yc = 0
+mycircle1.r = 2
+
+circle
+circle0.name = mycircle2
+mycircle2.xc = 4/2
+mycircle2.yc = 0
+mycircle2.r = 2
+
+intersect mycircle1 mycircle2

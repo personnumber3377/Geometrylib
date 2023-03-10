@@ -1,0 +1,11 @@
+line
+line0.name = myline1
+line
+line0.name = myline2
+myline1.a = 1
+myline1.b = 2
+myline1.c = 3
+myline2.a = 4
+myline2.b = 5
+myline2.c = 6
+intersect myline1 myline2

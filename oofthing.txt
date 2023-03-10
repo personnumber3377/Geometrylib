@@ -1,0 +1,98 @@
+COMMAND       PID        USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+sublime_t   24130 cyberhacker  DEL    REG   0,27            91 /dev/shm/24130:subl_arecv-3.8
+sublime_t   24130 cyberhacker  DEL    REG   0,27            81 /dev/shm/24130:subl_recv-3.8
+sublime_t   24130 cyberhacker  DEL    REG   0,27            74 /dev/shm/24130:subl_send-3.8
+sublime_t   24130 cyberhacker  DEL    REG   0,27            97 /dev/shm/KnibzN
+sublime_t   24130 cyberhacker  DEL    REG   0,27            69 /dev/shm/24130:subl_arecv-3.3
+sublime_t   24130 cyberhacker  DEL    REG   0,27            41 /dev/shm/24130:subl_recv-3.3
+sublime_t   24130 cyberhacker  DEL    REG   0,27            16 /dev/shm/24130:subl_send-3.3
+sublime_t   24130 cyberhacker  DEL    REG   0,27            95 /dev/shm/k2s1bM
+sublime_t   24130 cyberhacker  DEL    REG   0,27            88 /dev/shm/vUgijN
+sublime_t   24130 cyberhacker  DEL    REG   0,27            84 /dev/shm/kDdpuP
+sublime_t   24130 cyberhacker  DEL    REG   0,27            78 /dev/shm/593mMM
+sublime_t   24130 cyberhacker  DEL    REG   0,27            77 /dev/shm/1PSlHL
+sublime_t   24130 cyberhacker  DEL    REG   0,27            73 /dev/shm/UGYcLM
+sublime_t   24130 cyberhacker  DEL    REG   0,27            70 /dev/shm/crhKUN
+sublime_t   24130 cyberhacker  DEL    REG   0,27            59 /dev/shm/u924JM
+sublime_t   24130 cyberhacker  DEL    REG   0,27            57 /dev/shm/77NyMP
+sublime_t   24130 cyberhacker  DEL    REG   0,27            38 /dev/shm/UbaWBO
+sublime_t   24130 cyberhacker  DEL    REG   0,27            24 /dev/shm/Dy0KXM
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            69 /dev/shm/24130:subl_arecv-3.3
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            73 /dev/shm/sem.24130:subl_arecv-3.3:w
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            70 /dev/shm/sem.24130:subl_arecv-3.3:r
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            38 /dev/shm/sem.24130:subl_send-3.3:w
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            24 /dev/shm/sem.24130:subl_send-3.3:r
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            16 /dev/shm/24130:subl_send-3.3
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            59 /dev/shm/sem.24130:subl_recv-3.3:w
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            41 /dev/shm/24130:subl_recv-3.3
+plugin_ho   24150 cyberhacker  DEL    REG   0,27            57 /dev/shm/sem.24130:subl_recv-3.3:r
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            91 /dev/shm/24130:subl_arecv-3.8
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            97 /dev/shm/sem.24130:subl_arecv-3.8:w
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            95 /dev/shm/sem.24130:subl_arecv-3.8:r
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            78 /dev/shm/sem.24130:subl_send-3.8:w
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            77 /dev/shm/sem.24130:subl_send-3.8:r
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            74 /dev/shm/24130:subl_send-3.8
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            88 /dev/shm/sem.24130:subl_recv-3.8:w
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            81 /dev/shm/24130:subl_recv-3.8
+plugin_ho   24153 cyberhacker  DEL    REG   0,27            84 /dev/shm/sem.24130:subl_recv-3.8:r
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27           225 /dev/shm/.org.chromium.Chromium.6NS2yv
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27           140 /dev/shm/.org.chromium.Chromium.k0LqUv
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27           148 /dev/shm/.org.chromium.Chromium.5PdQqt
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27            82 /dev/shm/.org.chromium.Chromium.rjEL2s
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27           136 /dev/shm/.org.chromium.Chromium.tr7kSt
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27           106 /dev/shm/.org.chromium.Chromium.GJcKpu
+GeoGebra  1101487 cyberhacker  DEL    REG   0,27            99 /dev/shm/.org.chromium.Chromium.PgLhIs
+GeoGebra  1101487 cyberhacker   60r   REG   0,27   131072   82 /dev/shm/.org.chromium.Chromium.rjEL2s (deleted)
+GeoGebra  1101487 cyberhacker   61u   REG   0,27        4   99 /dev/shm/.org.chromium.Chromium.PgLhIs (deleted)
+GeoGebra  1101487 cyberhacker   96u   REG   0,27      144  106 /dev/shm/.org.chromium.Chromium.GJcKpu (deleted)
+GeoGebra  1101487 cyberhacker   98u   REG   0,27      144  136 /dev/shm/.org.chromium.Chromium.tr7kSt (deleted)
+GeoGebra  1101487 cyberhacker  100u   REG   0,27  1048576  140 /dev/shm/.org.chromium.Chromium.k0LqUv (deleted)
+GeoGebra  1101487 cyberhacker  101u   REG   0,27    65536  148 /dev/shm/.org.chromium.Chromium.5PdQqt (deleted)
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           308 /dev/shm/.org.chromium.Chromium.6VcSr0
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           307 /dev/shm/.org.chromium.Chromium.ACw5x1
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           114 /dev/shm/.org.chromium.Chromium.rcaO40
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           196 /dev/shm/.org.chromium.Chromium.cEZpP1
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           184 /dev/shm/.org.chromium.Chromium.xRohJ0
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           140 /dev/shm/.org.chromium.Chromium.k0LqUv
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           182 /dev/shm/.org.chromium.Chromium.QPrDU1
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           159 /dev/shm/.org.chromium.Chromium.Bbj0p1
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           148 /dev/shm/.org.chromium.Chromium.5PdQqt
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           289 /dev/shm/.org.chromium.Chromium.W2UY12
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           136 /dev/shm/.org.chromium.Chromium.tr7kSt
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27           106 /dev/shm/.org.chromium.Chromium.GJcKpu
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27            99 /dev/shm/.org.chromium.Chromium.PgLhIs
+GeoGebra  1101519 cyberhacker  DEL    REG   0,27            82 /dev/shm/.org.chromium.Chromium.rjEL2s
+GeoGebra  1101519 cyberhacker   38u   REG   0,27        4   99 /dev/shm/.org.chromium.Chromium.PgLhIs (deleted)
+GeoGebra  1101519 cyberhacker   42u   REG   0,27      144  106 /dev/shm/.org.chromium.Chromium.GJcKpu (deleted)
+GeoGebra  1101519 cyberhacker   43u   REG   0,27  2097152  114 /dev/shm/.org.chromium.Chromium.rcaO40 (deleted)
+GeoGebra  1101519 cyberhacker   45u   REG   0,27      144  136 /dev/shm/.org.chromium.Chromium.tr7kSt (deleted)
+GeoGebra  1101519 cyberhacker   46u   REG   0,27  1048576  140 /dev/shm/.org.chromium.Chromium.k0LqUv (deleted)
+GeoGebra  1101519 cyberhacker   47u   REG   0,27    65536  148 /dev/shm/.org.chromium.Chromium.5PdQqt (deleted)
+GeoGebra  1101519 cyberhacker   49u   REG   0,27      144  159 /dev/shm/.org.chromium.Chromium.Bbj0p1 (deleted)
+GeoGebra  1101519 cyberhacker   52u   REG   0,27      144  182 /dev/shm/.org.chromium.Chromium.QPrDU1 (deleted)
+GeoGebra  1101519 cyberhacker   53u   REG   0,27    65536  184 /dev/shm/.org.chromium.Chromium.xRohJ0 (deleted)
+GeoGebra  1101519 cyberhacker   54u   REG   0,27    65536  196 /dev/shm/.org.chromium.Chromium.cEZpP1 (deleted)
+GeoGebra  1101519 cyberhacker   55u   REG   0,27      144  289 /dev/shm/.org.chromium.Chromium.W2UY12 (deleted)
+GeoGebra  1101519 cyberhacker   57u   REG   0,27  1048576  307 /dev/shm/.org.chromium.Chromium.ACw5x1 (deleted)
+GeoGebra  1101519 cyberhacker   58u   REG   0,27  2097152  308 /dev/shm/.org.chromium.Chromium.6VcSr0 (deleted)
+GeoGebra  1101525 cyberhacker  DEL    REG   0,27            82 /dev/shm/.org.chromium.Chromium.rjEL2s
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           308 /dev/shm/.org.chromium.Chromium.6VcSr0
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           307 /dev/shm/.org.chromium.Chromium.ACw5x1
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           114 /dev/shm/.org.chromium.Chromium.rcaO40
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           225 /dev/shm/.org.chromium.Chromium.6NS2yv
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           196 /dev/shm/.org.chromium.Chromium.cEZpP1
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           184 /dev/shm/.org.chromium.Chromium.xRohJ0
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           289 /dev/shm/.org.chromium.Chromium.W2UY12
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27            82 /dev/shm/.org.chromium.Chromium.rjEL2s
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           198 /dev/shm/.org.chromium.Chromium.JHSIH0
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           182 /dev/shm/.org.chromium.Chromium.QPrDU1
+GeoGebra  1101547 cyberhacker  DEL    REG   0,27           159 /dev/shm/.org.chromium.Chromium.Bbj0p1
+GeoGebra  1101547 cyberhacker   36u   REG   0,27      144  159 /dev/shm/.org.chromium.Chromium.Bbj0p1 (deleted)
+GeoGebra  1101547 cyberhacker   37u   REG   0,27  2097152  114 /dev/shm/.org.chromium.Chromium.rcaO40 (deleted)
+GeoGebra  1101547 cyberhacker   39u   REG   0,27      144  182 /dev/shm/.org.chromium.Chromium.QPrDU1 (deleted)
+GeoGebra  1101547 cyberhacker   40u   REG   0,27    65536  184 /dev/shm/.org.chromium.Chromium.xRohJ0 (deleted)
+GeoGebra  1101547 cyberhacker   42u   REG   0,27    65536  196 /dev/shm/.org.chromium.Chromium.cEZpP1 (deleted)
+GeoGebra  1101547 cyberhacker   54u   REG   0,27  4198400  225 /dev/shm/.org.chromium.Chromium.6NS2yv (deleted)
+GeoGebra  1101547 cyberhacker   79u   REG   0,27      144  289 /dev/shm/.org.chromium.Chromium.W2UY12 (deleted)
+GeoGebra  1101547 cyberhacker   80u   REG   0,27  1048576  307 /dev/shm/.org.chromium.Chromium.ACw5x1 (deleted)
+GeoGebra  1101547 cyberhacker   82u   REG   0,27  2097152  308 /dev/shm/.org.chromium.Chromium.6VcSr0 (deleted)

@@ -1,0 +1,12 @@
+line
+line0.name = myline
+point
+point0.name = mypoint1
+point
+point0.name = mypoint2
+objects
+mypoint1.x = 1
+mypoint1.y = 2
+mypoint2.x = 3
+mypoint2.y = 4
+myline.set_values_two_points mypoint1 mypoint2

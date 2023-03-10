@@ -1,0 +1,6 @@
+circle xc=0 yc=0 r=762
+circle0.name = origincircle
+circle xc=356 yc=0 r=558
+circle0.name = anothercircle
+intersect anothercircle origincircle
+quit

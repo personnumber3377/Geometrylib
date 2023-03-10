@@ -1,0 +1,7 @@
+line a=1 b=2 c=3
+line0.name = myline
+point
+point0.name = mypoint
+mypoint.set_point_to_values 0 0
+mindistpointobjdot myline mypoint
+quit

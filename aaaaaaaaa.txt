@@ -1,0 +1,161 @@
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Running commands from file check_point_on_circle.txt.
+Command string: point
+fewfeewfewfewf
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['point0']
+objects after appending new_object: ['point0']
+global_objects after appending new_object: ['point0']
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint.set_point_to_values 7 2
+thing
+bullshitrgregreg
+command: mypoint.set_point_to_values 7 2
+self.method_arg_types : [['float', 'float'], []]
+self.method_arg_types : [['float', 'float'], []]
+SHITSHITSHIT
+self.x == 7.0
+self.y == 2.0
+x_in: 7.0
+y_in: 2.0
+result: 0
+Command string: circle
+fewfeewfewfewf
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == circle0
+setting parameter xc to this: xc0
+the_object.name == circle0
+setting parameter yc to this: yc0
+the_object.name == circle0
+setting parameter r to this: r0
+the_object.name == circle0
+setting parameter x to this: x0
+the_object.name == circle0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['mypoint']
+global_objects at the start: ['mypoint']
+objects after creation of new_object : ['mypoint']
+gregregregrr
+global_objects at the start: ['mypoint', 'circle0']
+objects after appending new_object: ['mypoint', 'circle0']
+global_objects after appending new_object: ['mypoint', 'circle0']
+[92mCreated new object.[0m
+Command string: circle0.name = mycircle
+thing
+==================================================================================
+Setting property : name
+On object: circle0
+selected_property: name
+value: mycircle
+self.yc : yc0
+result: None
+Command string: mycircle.xc = 10
+thing
+==================================================================================
+Setting property : xc
+On object: mycircle
+selected_property: xc
+value: 10
+self.yc : yc0
+result: None
+Command string: mycircle.yc = 0
+thing
+==================================================================================
+Setting property : yc
+On object: mycircle
+selected_property: yc
+value: 0
+self.yc : yc0
+result: None
+Command string: mycircle.r = 3
+thing
+==================================================================================
+Setting property : r
+On object: mycircle
+selected_property: r
+value: 3
+self.yc : 0
+result: None
+Command string: intersect mypoint mycircle
+fewfeewfewfewf
+Args : ['intersect', 'mypoint', 'mycircle']
+obj_name1 : mypoint
+obj_name2 : mycircle
+name_str: mypoint
+['mypoint', 'mycircle']
+---------------------------
+mypoint
+mycircle
+---------------------------
+name_str: mycircle
+['mypoint', 'mycircle']
+---------------------------
+mypoint
+mycircle
+---------------------------
+obj.name == mypoint
+poopooo
+obj1: =======================
+Type: point
+x = 7.0
+y = 2.0
+name = mypoint
+=======================
+
+obj2: <__main__.circle object at 0x7f04b3fc1130>
+================================================
+object1 : =======================
+Type: point
+x = 7.0
+y = 2.0
+name = mypoint
+=======================
+
+object2 : <__main__.circle object at 0x7f04b3fc1130>
+object1 : <class '__main__.point'>
+object2 : <class '__main__.circle'>
+================================================
+left_side_1 : x
+right_side_1 : 7.0
+first_equation : Eq(x, 7.0)
+second_equation : Eq(y, 2.0)
+Circle equation bullshit: 
+((x)-(10))**2+((y)-(0))**2=(3)**2
+oof
+oof22
+bullshit
+equation : Eq(x, 7.0)
+"x"+str(object1.var_count) == x0
+equation : Eq(y, 2.0)
+"x"+str(object1.var_count) == x0
+substituted_equations
+Eq(tempvarx, 7.0)
+Eq(tempvary, 2.0)
+Eq(tempvary**2 + (tempvarx - 10)**2, 9)
+
+result: []
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: [][0m
+[94m>>> [0m
