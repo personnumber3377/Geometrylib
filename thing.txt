@@ -1,0 +1,2 @@
+area_between_intersections x**2=4*y y**2=4*x
+quit

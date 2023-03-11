@@ -11,17 +11,17 @@ from sympy import *
 from outcolors import *
 import readline
 from sympy.calculus.util import *
-import random
+
 
 
 global_things = []
 global_objects = []
 
-user_defined_variables = {}
-# commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate"]
-commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections"]
+user_defined_variables = []
 
-object_types = ["line", "circle", "point"] # these are the types for when the argument to a method of an object are themselves objects. If not, then they are assumed to be constant values or expressions
+commands = ["line", "intersect", "help", "quit", "objects", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot"]
+
+object_types = ["line", "circle", "point"] # these are the types for when the argument to a method of an object are themselves objects. If not, then they are assumed to be constant values.
 
 VERSION_STR="1.0"
 
@@ -881,7 +881,7 @@ def intersection_command(command:str, objects:list):
 
 		print_col(CYELLOW, "Intersections are at points: " + str(results))
 
-	return results
+	return 0
 
 
 
@@ -919,30 +919,6 @@ def check_common_syntax(command_string, max_args, min_args, all_commands):
 	max_num_args = max_args[index]
 	min_num_args = min_args[index]
 
-	if len(stuff) > max_num_args or len(stuff) < min_num_args:
-		if not any("[" in a for a in stuff): # check unpack thing
-
-			fail("Invalid number of arguments: "+str(command_string))
-			fail("Min number of arguments is "+str(min_num_args) + " and max number of arguments is "+str(max_num_args) + " .")
-			return 1
-		else:
-			return 0
-	return 0
-
-
-def check_common_syntax_var(command_string, max_args, min_args, all_commands):
-	print("fewfeewfewfewf")
-
-	# this part is shared by every command (checks that the correct number of arguments are passed to the function)
-
-	index = all_commands.index(command_string.split(" ")[0])
-	
-	stuff = command_string.split(" ")
-	stuff = stuff[1:] # get rid of the initial command
-	max_num_args = max_args[index]
-	min_num_args = min_args[index]
-	print("stuff == "+str(stuff))
-	print("command_string: "+str(command_string))
 	if len(stuff) > max_num_args or len(stuff) < min_num_args:
 		fail("Invalid number of arguments: "+str(command_string))
 		fail("Min number of arguments is "+str(min_num_args) + " and max number of arguments is "+str(max_num_args) + " .")
@@ -1166,57 +1142,6 @@ def mindistpointobjdot(command:str, objects:list):
 
 	print("Result: "+str(result))
 
-	resulting_dict = {'x':result[0][0], 'y':result[0][1]}
-
-	return resulting_dict
-
-
-# variable_assignment_command(command_string, global_objects)
-
-def variable_assignment_command(command_string: str, global_objects: list, max_arg_lengths: list, min_arg_lengths: list, commands: list) -> int:
-
-	tokens = command_string.split(" ")
-
-	if tokens[1] != ":=":
-		fail("Invalid variable assignment command: "+str(command_string))
-		return 1
-
-
-
-	# the new variable name is tokens[0]
-	new_var_name = tokens[0]
-
-	assigning_command = tokens[2:] # the command is after the "variable :="   part .
-
-	new_command_string = ' '.join(assigning_command)
-
-
-
-	result = check_common_syntax_var(new_command_string, max_arg_lengths, min_arg_lengths, commands)  # this check is shared by every command to check the arguments
-	if result:
-		return 1
-
-	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate"]
-	index = commands.index(new_command_string.split(" ")[0])
-
-	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot]
-
-	var_values = handle_functions[index](new_command_string, global_objects)
-
-	print("var_values : "+str(var_values))
-
-
-
-	user_defined_variables[new_var_name] = var_values
-	print("var_values.keys()" + str(var_values.keys()))
-	print(str([str(a) for a in var_values.keys()]))
-	print(str([str(a) for a in var_values.values()]))
-	return 0
-
-
-
-
-
 
 def maxdistpointobjdot(command:str, objects:list):
 	
@@ -1251,282 +1176,6 @@ def maxdistpointobjdot(command:str, objects:list):
 
 	print("Result: "+str(result))
 
-# command_string = unpack_variables_in_command(command_string, user_defined_variables)
-
-def unpack_variables_in_command(command_string:str, user_defined_variables: list):
-
-	tokens = command_string.split(" ")
-	
-	generated_command = []
-	for token in tokens:
-		if "[" not in token or "]" not in token: # if there is nothing to unpack then just append as is
-			generated_command.append(token)
-		else:
-
-			start = None
-			end = None
-			if token.count("[") > 1 or token.count("]") > 1:
-
-				# get only partial part of the result:
-
-				partial = token[token.index("]")+1:] # get the rest of the thing
-				start = partial[1:partial.index(":")]
-				end = partial[partial.index(":")+1:partial.index("]")]
-				start = int(start)
-				end= int(end)
-
-
-				#fail("Subtokens like [myvar][a:b] are not implemented.")
-				#return 1
-
-			var_name = token[token.index("[")+1:token.index("]")] # get the variable name from inside the brackets
-			if var_name not in user_defined_variables.keys():
-				fail("Undefined variable: "+str(var_name)+" .")
-				return 1
-
-
-			var_values = user_defined_variables[var_name]
-
-			print("str(var_values) == "+str(str(var_values)))
-			print("start == "+str(start))
-			print("end == "+str(end))
-			if start != None and end != None:
-				
-				print("abcdefg")
-				# print({k:d[k] for k in l if k in d})
-				'''
-				d = {1:2, 3:4, 5:6, 7:8}
-
-				# the subset of keys I'm interested in
-				l = (1,5)
-
-				'''
-				l = tuple([list(var_values.keys())[x] for x in range(start, end)])
-				print("l == "+str(l))
-
-				var_values = {k:var_values[k] for k in l if k in var_values}
-
-
-			print("var_values final: "+str(var_values))
-
-			replacement = ' '.join([str(key)+str("=")+str(var_values[key]) for key in var_values.keys()])
-
-			generated_command.append(replacement)
-	final_command = ' '.join(generated_command)
-	return final_command
-
-
-# mindistobjdot(command:str, objects:list):
-
-def integrate_command(command: str, objects: list):
-
-	# integrate a function over xstart to xend
-
-	tokens = command.split(" ")
-	selected_object = tokens[1]
-
-	int_var = tokens[2] # variable is assumed to be next
-	xstart = tokens[3]
-	xend = tokens[4]
-	expression = None
-
-	if selected_object not in get_names(global_objects):
-		# the input is assumed to be a literal expression
-		equation = Eq(parse_expr(selected_object[:selected_object.index("=")]), parse_expr(selected_object[selected_object.index("=")+1:]))
-		expressions = [equation]
-
-	else:
-		expressions = get_object_by_name(selected_object).get_equations()
-
-	# if there are multiple equations for the object, then make the user choose which of them:
-
-	if len(expressions) > 1:
-		warn("The object you selected has multiple equations associated with it: ")
-		count = 0
-		for expr in expressions:
-			print(CBLUE +str("[{}] ".format(count)) + str(expr)+bcolors.ENDC)
-			count += 1
-		print("Please select the index of the desired expr: ")
-		index = int(input("> "))
-		selected_expr = expressions[index]
-	else:
-		selected_expr = expressions[0]
-
-	x = Symbol('x')
-	y = Symbol('y')
-
-	print("selected_expr: "+str(selected_expr))
-	y_function = solve(selected_expr,y)
-	print("y_function: " +str(y_function))
-	y_function = y_function[0]
-	result = integrate(y_function,(x,xstart, xend))
-
-	print(CYELLOW + "Result: "+str(result) + bcolors.ENDC)
-
-	return result
-
-
-
-def area_between_intersections(command:str, objects:list):
-
-	# calculate the area between the two intersection points of two graphs
-
-	# the syntax for this problem would be "commandstring" object1 object2
-
-	# parse command
-
-
-	tokens = command.split(" ")
-
-
-	equation_list = []
-
-
-
-	# get equations from the arguments:  (I should probably makes this a function in itself to check if an arguments a raw expression or an object itself. )
-
-	for i in range(1,3):
-		object_name = tokens[i]
-
-		if object_name not in get_names(objects):
-			# assumed to be a raw expression
-			equation = Eq(parse_expr(object_name[:object_name.index("=")]), parse_expr(object_name[object_name.index("=")+1:]))
-			expressions = [equation]
-
-		else:
-			# object
-			expressions = get_object_by_name(object_name).get_equations()
-
-		if len(expressions) > 1:
-			warn("The object you selected has multiple equations associated with it: ")
-			count = 0
-			for expr in expressions:
-				print(CBLUE +str("[{}] ".format(count)) + str(expr)+bcolors.ENDC)
-				count += 1
-			print("Please select the index of the desired expr: ")
-			index = int(input("> "))
-			selected_expr = expressions[index]
-		else:
-			selected_expr = expressions[0]
-		equation_list.append(selected_expr)
-			
-	# get intersection points:
-
-	# def intersection(object1, object2):
-
-	'''
-	all_equations = equations1 + equations2
-	print("All equations as a list: "+str(all_equations))
-
-
-	result = sympy.solve(all_equations, ('x', 'y'))
-	print("result: "+str(result))
-
-	return result
-	'''
-
-
-
-
-
-
-
-	intersection_points = solve(equation_list, ('x', 'y'))
-	print("intersection_points == "+str(intersection_points))
-	if len(intersection_points) < 2:
-		fail("Not enough intersection points for the integral command!")
-		return 1
-
-	intersection_x_values = [intersection_points[0][0], intersection_points[1][0]]
-	print("thingoof intersection_x_values ==" + str())
-
-	# make the difference function
-
-	#functions_in_y_format = Solve(equation_list, ('y'))
-
-	#function1 = functions_in_y_format[0]
-	functions_in_y_format = []
-
-	for eq in equation_list:
-		functions_in_y_format.append(solve(eq, ('y')))
-
-	intersection_x_values = sorted(intersection_x_values)
-
-	check_value = random.uniform(intersection_x_values[0], intersection_x_values[1])
-
-
-
-	# see which function is larger in that range
-	print("functions_in_y_format == "+str(functions_in_y_format))
-
-	if (len(functions_in_y_format[0])) > 1:
-		print("Please select one of these graphs: ")
-		count = 0
-		for thing in functions_in_y_format[0]:
-			print(str(count) + " : "+str(thing))
-			count+=1 
-		index = int(input(">>"))
-
-		functions_in_y_format[0] = [functions_in_y_format[0][index]]
-
-
-
-
-
-	if (len(functions_in_y_format[1])) > 1:
-		print("Please select one of these graphs: ")
-		count = 0
-		for thing in functions_in_y_format[1]:
-			print(str(count) + " : "+str(thing))
-			count+=1 
-		index = int(input(">>"))
-
-		functions_in_y_format[1] = [functions_in_y_format[1][index]]
-
-
-
-	if functions_in_y_format[0][0].subs({'x':check_value}) > functions_in_y_format[1][0].subs({'x':check_value}):
-
-		bigger_function = functions_in_y_format[0][0]
-		smaller_fun = functions_in_y_format[1][0]
-	else:
-		bigger_function = functions_in_y_format[1][0]
-		smaller_fun = functions_in_y_format[0][0]
-
-
-	print("bigger function: "+str(bigger_function))
-	print("smaller_fun : " + str(smaller_fun))
-
-	#difference_function = parse_expr(bigger_function) - parse_expr(smaller_fun)
-
-	difference_function = bigger_function - smaller_fun
-
-
-	print("intersection_x_values[0] == "+str(intersection_x_values[0]))
-	print("intersection_x_values[1] == "+str(intersection_x_values[1]))
-
-
-	resulting_area = integrate(difference_function, ('x', intersection_x_values[0], intersection_x_values[1]))
-
-	print(CYELLOW + "Area: "+str(resulting_area) + bcolors.ENDC)
-
-
-
-	return resulting_area
-
-
-	#obj1 = get_object_by_name(tokens[1])
-	#obj2 = get_object_by_name(tokens[2])
-
-
-
-
-
-
-
-
-
-
 
 def command_mainloop(file=None):
 	print_banner()
@@ -1541,10 +1190,10 @@ def command_mainloop(file=None):
 		print("Running commands from file "+str(file)+".")
 
 	objects = []
-	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections"]
-	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2]
-	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2]
-	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections]
+	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot"]
+	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2]
+	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2]
+	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot]
 	while True:
 		if line_counter != len(lines):
 			command_string = lines[line_counter]
@@ -1556,15 +1205,6 @@ def command_mainloop(file=None):
 
 		command_start = command_string.split(" ")[0]
 		if command_start not in commands:
-
-			if ":=" in command_string: # check variable assignment command
-				print("poopooshit")
-				result = variable_assignment_command(command_string, global_objects, max_arg_lengths, min_arg_lengths, commands)
-				if result:
-					fail("Invalid command: "+str(command_string))
-				continue
-
-
 			if command_start != "":
 				print("thing")
 				if len(command_string.split(" ")) == 1 and "." not in command_string.split(" ")[0]:
@@ -1589,9 +1229,6 @@ def command_mainloop(file=None):
 		result = check_common_syntax(command_string, max_arg_lengths, min_arg_lengths, commands)  # this check is shared by every command to check the arguments
 		if result:
 			continue
-		
-		command_string = unpack_variables_in_command(command_string, user_defined_variables)  # this is to unpack arguments like [myvar]
-
 
 		handle_functions[index](command_string, global_objects)
 

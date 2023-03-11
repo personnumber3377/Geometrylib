@@ -11,7 +11,7 @@ from sympy import *
 from outcolors import *
 import readline
 from sympy.calculus.util import *
-import random
+
 
 
 global_things = []
@@ -19,9 +19,9 @@ global_objects = []
 
 user_defined_variables = {}
 # commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate"]
-commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections"]
+commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate"]
 
-object_types = ["line", "circle", "point"] # these are the types for when the argument to a method of an object are themselves objects. If not, then they are assumed to be constant values or expressions
+object_types = ["line", "circle", "point"] # these are the types for when the argument to a method of an object are themselves objects. If not, then they are assumed to be constant values.
 
 VERSION_STR="1.0"
 
@@ -938,11 +938,10 @@ def check_common_syntax_var(command_string, max_args, min_args, all_commands):
 	index = all_commands.index(command_string.split(" ")[0])
 	
 	stuff = command_string.split(" ")
-	stuff = stuff[1:] # get rid of the initial command
+	stuff = stuff[3:]
 	max_num_args = max_args[index]
 	min_num_args = min_args[index]
-	print("stuff == "+str(stuff))
-	print("command_string: "+str(command_string))
+
 	if len(stuff) > max_num_args or len(stuff) < min_num_args:
 		fail("Invalid number of arguments: "+str(command_string))
 		fail("Min number of arguments is "+str(min_num_args) + " and max number of arguments is "+str(max_num_args) + " .")
@@ -1165,10 +1164,6 @@ def mindistpointobjdot(command:str, objects:list):
 	result = sympy.solve(equations, ('x', 'y'))
 
 	print("Result: "+str(result))
-
-	resulting_dict = {'x':result[0][0], 'y':result[0][1]}
-
-	return resulting_dict
 
 
 # variable_assignment_command(command_string, global_objects)
@@ -1395,7 +1390,7 @@ def area_between_intersections(command:str, objects:list):
 
 		else:
 			# object
-			expressions = get_object_by_name(object_name).get_equations()
+			expressions = get_object_by_name(selected_object).get_equations()
 
 		if len(expressions) > 1:
 			warn("The object you selected has multiple equations associated with it: ")
@@ -1431,14 +1426,14 @@ def area_between_intersections(command:str, objects:list):
 
 
 
-	intersection_points = solve(equation_list, ('x', 'y'))
-	print("intersection_points == "+str(intersection_points))
-	if len(intersection_points) < 2:
+	intersection_points = Solve(equation_list, ('x', 'y'))
+
+	if len(intersection_points)[0] < 2:
 		fail("Not enough intersection points for the integral command!")
 		return 1
 
-	intersection_x_values = [intersection_points[0][0], intersection_points[1][0]]
-	print("thingoof intersection_x_values ==" + str())
+	intersection_x_values = intersection_points[0]
+
 
 	# make the difference function
 
@@ -1448,7 +1443,7 @@ def area_between_intersections(command:str, objects:list):
 	functions_in_y_format = []
 
 	for eq in equation_list:
-		functions_in_y_format.append(solve(eq, ('y')))
+		functions_in_y_format.append(Solve(eq, ('y')))
 
 	intersection_x_values = sorted(intersection_x_values)
 
@@ -1457,60 +1452,23 @@ def area_between_intersections(command:str, objects:list):
 
 
 	# see which function is larger in that range
-	print("functions_in_y_format == "+str(functions_in_y_format))
 
-	if (len(functions_in_y_format[0])) > 1:
-		print("Please select one of these graphs: ")
-		count = 0
-		for thing in functions_in_y_format[0]:
-			print(str(count) + " : "+str(thing))
-			count+=1 
-		index = int(input(">>"))
+	if functions_in_y_format[0].subs({'x':check_value}) > functions_in_y_format[1].subs({'x':check_value}):
 
-		functions_in_y_format[0] = [functions_in_y_format[0][index]]
-
-
-
-
-
-	if (len(functions_in_y_format[1])) > 1:
-		print("Please select one of these graphs: ")
-		count = 0
-		for thing in functions_in_y_format[1]:
-			print(str(count) + " : "+str(thing))
-			count+=1 
-		index = int(input(">>"))
-
-		functions_in_y_format[1] = [functions_in_y_format[1][index]]
-
-
-
-	if functions_in_y_format[0][0].subs({'x':check_value}) > functions_in_y_format[1][0].subs({'x':check_value}):
-
-		bigger_function = functions_in_y_format[0][0]
-		smaller_fun = functions_in_y_format[1][0]
+		bigger_function = functions_in_y_format[0]
+		smaller_fun = functions_in_y_format[1]
 	else:
-		bigger_function = functions_in_y_format[1][0]
-		smaller_fun = functions_in_y_format[0][0]
+		bigger_function = functions_in_y_format[1]
+		smaller_fun = functions_in_y_format[0]
 
 
-	print("bigger function: "+str(bigger_function))
-	print("smaller_fun : " + str(smaller_fun))
+	difference_function = parse_expr(bigger_function - smaller_fun)
 
-	#difference_function = parse_expr(bigger_function) - parse_expr(smaller_fun)
+	resulting_area = integrate(difference_function, (x, intersection_x_values[0], intersection_x_values[1]))
 
-	difference_function = bigger_function - smaller_fun
+	print(CYELLOW + "Area: "+str(resulting_area) + ENDC)
 
-
-	print("intersection_x_values[0] == "+str(intersection_x_values[0]))
-	print("intersection_x_values[1] == "+str(intersection_x_values[1]))
-
-
-	resulting_area = integrate(difference_function, ('x', intersection_x_values[0], intersection_x_values[1]))
-
-	print(CYELLOW + "Area: "+str(resulting_area) + bcolors.ENDC)
-
-
+	
 
 	return resulting_area
 
@@ -1541,10 +1499,10 @@ def command_mainloop(file=None):
 		print("Running commands from file "+str(file)+".")
 
 	objects = []
-	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections"]
-	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2]
-	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2]
-	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections]
+	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate"]
+	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4]
+	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4]
+	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command]
 	while True:
 		if line_counter != len(lines):
 			command_string = lines[line_counter]

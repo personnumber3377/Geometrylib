@@ -1,0 +1,5 @@
+
+line a=4 b=-2 c=3
+line0.name = myline
+area_between_intersections myline y=x**2-10*x+10
+quit

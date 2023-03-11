@@ -1,0 +1,11 @@
+
+circle xc=20 yc=10 r=10
+circle0.name = mycircle
+point x=20 y=10
+line a=4 b=-3 c=50
+line0.name = linething
+oof := mindistpointobjdot linething point0
+point [oof]
+maxdistpointobjdot mycircle point1
+maxdistobjdot mycircle point1
+quit
