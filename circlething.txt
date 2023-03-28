@@ -1,0 +1,11 @@
+
+circle xc=8 yc=3 r=3
+point x=0 y=0
+mindistobjdot circle0 point0
+
+line a=0 b=-1 c=0
+pointthing := intersect circle0 line0
+point [pointthing]
+point1.name = thingpoint
+mindistobjdot thingpoint point0
+quit

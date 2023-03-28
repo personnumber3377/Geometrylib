@@ -1,0 +1,10 @@
+line a=1 b=2 c=3
+line0.name = myline1
+line a=4 b=5 c=6
+line0.name = myline2
+myvar := intersect myline1 myline2
+point [myvar]
+point0.name = mypoint
+mypoint
+quit
+#=======================Type: pointx = 1y = -2name = mypoint=======================

@@ -1,0 +1,229 @@
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Running commands from file sivu142tehtävä15.txt.
+Command string: 
+Command string: circle xc=20 yc=10 r=10
+fewfeewfewfewf
+arguments: ['xc=20', 'yc=10', 'r=10']
+object_name: circle
+{'xc': '20', 'yc': '10', 'r': '10'}
+*arguments_thing : {'xc': '20', 'yc': '10', 'r': '10'}
+bullshit: {'xc': '20', 'yc': '10', 'r': '10'}
+bullshit: {'xc': '20', 'yc': '10', 'r': '10'}
+the_object.name == circle0
+setting parameter xc to this: xc0
+the_object.name == circle0
+setting parameter yc to this: yc0
+the_object.name == circle0
+setting parameter r to this: r0
+the_object.name == circle0
+setting parameter x to this: x0
+the_object.name == circle0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['circle0']
+objects after appending new_object: ['circle0']
+global_objects after appending new_object: ['circle0']
+[92mCreated new object.[0m
+Command string: circle0.name = mycircle
+thing
+==================================================================================
+Setting property : name
+On object: circle0
+selected_property: name
+value: mycircle
+self.yc : 10
+result: None
+Command string: point x=20 y=10
+fewfeewfewfewf
+arguments: ['x=20', 'y=10']
+object_name: point
+{'x': '20', 'y': '10'}
+*arguments_thing : {'x': '20', 'y': '10'}
+bullshit: {'x': '20', 'y': '10'}
+bullshit: {'x': '20', 'y': '10'}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['mycircle']
+global_objects at the start: ['mycircle']
+objects after creation of new_object : ['mycircle']
+gregregregrr
+global_objects at the start: ['mycircle', 'point0']
+objects after appending new_object: ['mycircle', 'point0']
+global_objects after appending new_object: ['mycircle', 'point0']
+Command string: line a=4 b=-3 c=50
+fewfeewfewfewf
+objects at the start: ['mycircle', 'point0']
+arguments: ['a=4', 'b=-3', 'c=50']
+object_name: line
+{'a': '4', 'b': '-3', 'c': '50'}
+*arguments_thing : {'a': '4', 'b': '-3', 'c': '50'}
+bullshit: {'a': '4', 'b': '-3', 'c': '50'}
+bullshit: {'a': '4', 'b': '-3', 'c': '50'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['mycircle', 'point0']
+global_objects at the start: ['mycircle', 'point0']
+objects after creation of new_object : ['mycircle', 'point0']
+gregregregrr
+global_objects at the start: ['mycircle', 'point0', 'line0']
+objects after appending new_object: ['mycircle', 'point0', 'line0']
+global_objects after appending new_object: ['mycircle', 'point0', 'line0']
+objects at the end: ['mycircle', 'point0', 'line0']
+[92mCreated new object.[0m
+Command string: line0.name = linething
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: linething
+result: None
+Command string: oof := mindistpointobjdot linething point0
+poopooshit
+fewfeewfewfewf
+stuff == ['linething', 'point0']
+command_string: mindistpointobjdot linething point0
+new_command_string == mindistpointobjdot linething point0
+
+
+
+
+circle xc=20 yc=10 r=10
+circle0.name = mycircle
+point x=20 y=10
+line a=4 b=-3 c=50
+line0.name = linething
+oof := mindistpointobjdot linething point0
+point [oof]
+po
+quit
+
+
+
+
+
+
+
+
+
+Running subcommand: mindistpointobjdot
+
+
+
+
+
+name_str: linething
+['mycircle', 'point0', 'linething']
+---------------------------
+mycircle
+point0
+linething
+---------------------------
+obj.name == mycircle
+obj.name == point0
+name_str: point0
+['mycircle', 'point0', 'linething']
+---------------------------
+mycircle
+point0
+linething
+---------------------------
+obj.name == mycircle
+oof
+oof22
+object_equation : [Eq(4*x - 3*y + 50, 0)]
+[4*x - 3*y + 0 + 50]
+[x]
+[4*x - 3*y + 0 + 50]
+[x]
+[[4*x - 3*y + 0 + 50]]
+[3*y/4 - 25/2, x]
+Matrix([[4, 3*y - 50]])
+[4*x - 3*y + 0 + 50]
+[y]
+[4*x - 3*y + 0 + 50]
+[y]
+[[4*x - 3*y + 0 + 50]]
+[4*x/3 + 50/3, y]
+Matrix([[3, 4*x + 50]])
+sol_x : {x: 3*y/4 - 25/2}
+sol_y : {y: 4*x/3 + 50/3}
+substitution: None
+thing: {x: 3*y/4 - 25/2, y: 4*x/3 + 50/3}
+bullshit ooof :::: sqrt((x-20)**2+(x-10)**2)
+distance_function : sqrt((x - 20)**2 + (x - 10)**2)
+Substituted distance function: sqrt((x - 20)**2 + (x - 10)**2)
+f: sqrt((x - 20)**2 + (x - 10)**2)
+solution: 5*sqrt(2)
+distance_function : sqrt((x - 20)**2 + (x - 10)**2)
+Minimum distance: 5*sqrt(2)
+name_str: point0
+['mycircle', 'point0', 'linething']
+---------------------------
+mycircle
+point0
+linething
+---------------------------
+obj.name == mycircle
+name_str: linething
+['mycircle', 'point0', 'linething']
+---------------------------
+mycircle
+point0
+linething
+---------------------------
+obj.name == mycircle
+obj.name == point0
+oof
+oof22
+radiuses : 5*sqrt(2)
+Returning this: (x-20)**2+(y-10)**2=(5*sqrt(2))**2
+circle_equation : [Eq((x - 20)**2 + (y - 10)**2, 50)]
+all equations: [Eq(4*x - 3*y + 50, 0), Eq((x - 20)**2 + (y - 10)**2, 50)]
+[4*x - 3*y + 0 + 50, (x - 20)**2 + (y - 10)**2 - 50]
+[x, y]
+[4*x - 3*y + 0 + 50, (x - 20)**2 + (y - 10)**2 - 50]
+[x, y]
+[[4*x - 3*y + 0 + 50, (x - 20)**2 + (y - 10)**2 - 50]]
+[-50, 4*x - 3*y]
+[50, (x - 20)**2 + (y - 10)**2]
+[Poly(4*x - 3*y + 50, x, y, domain='ZZ'), Poly(x**2 - 40*x + y**2 - 20*y + 450, x, y, domain='ZZ')]
+[Poly(4*x - 3*y + 50, x, y, domain='ZZ'), Poly(x**2 - 40*x + y**2 - 20*y + 450, x, y, domain='ZZ')]
+Result: [(4 - 3*sqrt(14)*I, 22 - 4*sqrt(14)*I), (4 + 3*sqrt(14)*I, 22 + 4*sqrt(14)*I)]
+Resulting dict: {'x': 4 - 3*sqrt(14)*I, 'y': 22 - 4*sqrt(14)*I}
+oofstring1: 4 - 3*sqrt(14)*I
+oofstring2: 4 - 3*sqrt(14)*I
+oofstring1 after: 4-3*sqrt(14)*I
+oofstring2 after: 4-3*sqrt(14)*I
+final_dict: {'x': '4-3*sqrt(14)*I', 'y': '4-3*sqrt(14)*I'}
+
+
+
+
+Returned from the assignment command:
+var_values : {'x': 4 - 3*sqrt(14)*I, 'y': 22 - 4*sqrt(14)*I}
+var_values.keys()dict_keys(['x', 'y'])
+['x', 'y']
+['4 - 3*sqrt(14)*I', '22 - 4*sqrt(14)*I']
+Command string: point [oof]
+fewfeewfewfewf
+str(var_values) == {'x': 4 - 3*sqrt(14)*I, 'y': 22 - 4*sqrt(14)*I}
+start == None
+end == None
+var_values final: {'x': 4 - 3*sqrt(14)*I, 'y': 22 - 4*sqrt(14)*I}
+arguments: ['x=4', '-', '3*sqrt(14)*I', 'y=22', '-', '4*sqrt(14)*I']
+object_name: point

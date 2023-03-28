@@ -1,0 +1,11 @@
+point
+point0.name = mypoint
+mypoint.set_point_to_values 7 2
+circle
+circle0.name = mycircle
+mycircle.xc = 10
+mycircle.yc = 2
+mycircle.r = 3
+intersect mypoint mycircle
+quit
+#{'x': 7.00000000000000, 'y': 2.00000000000000}

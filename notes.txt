@@ -1,0 +1,12 @@
+
+The parameters to the function are passed improperly because:
+
+	resulting_dict = {'x':result[0][0], 'y':result[0][1]}
+
+	print("Resulting dict: "+str(resulting_dict))
+
+	return resulting_dict
+
+
+this causes resulting_dict to have stuff like {'x':2*sqrt(3) + 1 ... }  which then parsed as arguments to the next function gets parsed as: "x=2*sqrt()" "+" "1" etc and those are of course invalid.
+

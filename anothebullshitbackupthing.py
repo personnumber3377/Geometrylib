@@ -12,7 +12,6 @@ from outcolors import *
 import readline
 from sympy.calculus.util import *
 import random
-import os
 
 
 global_things = []
@@ -199,35 +198,7 @@ class point:
 		
 		return '''=======================\nType: point\nx = {}\ny = {}\nname = {}\n=======================\n'''.format(self.x, self.y, self.name)
 
-def get_ranges(x0,y0,x1,y1):
 
-	# get the range of numbers:
-	
-	output = []
-
-
-	x0 = str(x0)
-	y0 = str(y0)
-	x1 = str(x1)
-	y1 = str(y1)
-
-
-
-	if x0 > x1:
-		output.append("x>="+str(x1))
-		output.append("x<="+str(x0))
-	else:
-		output.append("x<="+str(x1))
-		output.append("x>="+str(x0))
-
-	if y0 > y1:
-		output.append("y>="+str(y1))
-		output.append("y<="+str(y0))
-	else:
-		output.append("y<="+str(y1))
-		output.append("y>="+str(y0))
-	print("Output: "+str(output))
-	return output
 
 class triangle:
 	def __init__(self, *arguments):
@@ -237,12 +208,12 @@ class triangle:
 		
 		# {"x":"unknown", "y":"unknown", "name":"point"}
 
-		self.default_arguments = {"x0":0, "y0":0, "x1":0, "y1":0, "x2":0, "y2":0, "name":"triangle"} # list of tuples which are all 0,0
+		self.default_arguments = {"x0":0, "y0":0, "x1":0, "y1":0, "x2":0, "y2":0} # list of tuples which are all 0,0
 
 		self.parameters = ["x0", "y0", "x1", "y1", "x2", "y2"]
 		
 		self.method_strings = ["set_lines_from_points"]
-		self.methods = [self.set_lines_from_points]
+		self.methods = [set_lines_from_points]
 
 		self.num_args = [3]
 		self.method_arg_types = [["point", "point", "point"]]
@@ -299,7 +270,6 @@ class triangle:
 
 		return return_value
 
-	'''
 	def get_range(self,x0,y0,x1,y1):
 
 		# spaghetti code
@@ -325,27 +295,15 @@ class triangle:
 		return output
 
 
-	'''
+
 
 	def get_line_equation(self,x0,y0,x1,y1):
 
 		# a,b = [[(y0-y1)/(x0*y1-x1*y0),(-x0+x1)/(x0*y1-x1*y0)]]   and c=1
-
-		print("Setting a to this: "+str("(({})-({}))/(({}*{})-({}*{}))".format(str(y0), str(y1), str(x0), str(y1), str(x1), str(y0))))
 		a = simplify("(({})-({}))/(({}*{})-({}*{}))".format(str(y0), str(y1), str(x0), str(y1), str(x1), str(y0)))
 		b = simplify("(-({})+({}))/(({}*{})-({}*{}))".format(str(x0), str(x1), str(x0), str(y1), str(x1), str(y0)))
 		c = "1"
-		print("Line-equation thing: "+str("({})*x+({})*y+1=0".format(str(a), str(b))))
-		
-
-		print("self.x0 : "+str(self.x0))
-		print("self.x0 : "+str(self.y0))
-		print("self.x1 : "+str(self.x1))
-		print("self.y1 : "+str(self.y1))
-		print("self.x2 : "+str(self.x2))
-		print("self.y2 : "+str(self.y2))
-
-		return "({})*x+({})*y+1".format(str(a), str(b))
+		return "({})*x+({})*y+1=0".format(str(a), str(b))
 
 
 
@@ -353,15 +311,15 @@ class triangle:
 
 		# basically just return the list of lines, except that there are constrictions on the answers
 
-		line_equations = [self.get_line_equation(self.x0, self.y0, self.x1, self.y1), self.get_line_equation(self.x0, self.y0, self.x1, self.y1), self.get_line_equation(self.x0, self.y0, self.x2, self.y2)]
+		line_equations = [get_line_equation(self.x0, self.y0, self.x1, self.y1), get_line_equation(self.x0, self.y0, self.x1, self.y1), get_line_equation(self.x0, self.y0, self.x2, self.y2)]
 
 		constraints = []
 
-		constraints += get_ranges(self.x0, self.y0, self.x1, self.y1)
+		constraints.append += get_ranges(self.x0, self.y0, self.x1, self.y1)
 
-		constraints += get_ranges(self.x0, self.y0, self.x2, self.y2)
+		constraints.append += get_ranges(self.x0, self.y0, self.x2, self.y2)
 
-		constraints += get_ranges(self.x1, self.y1, self.x2, self.y2)
+		constraints.append += get_ranges(self.x0, self.y0, self.x3, self.y3)
 
 		final_eqs = []
 
@@ -370,22 +328,9 @@ class triangle:
 			equation = line_equations[i]
 			constraint_thing = constraints[i]
 
-			#final_equation = equation + "," + constraint_thing
-			print("Parsing equation: "+str(equation))
-			print("resulting thing: "+str(parse_expr(equation)))
+			final_equation = equation + constraint_thing
 
-			print("constraint_thing: "+str(constraint_thing))
-
-			print("parse_expr(constraint_thing) == "+str(parse_expr(constraint_thing)))
-
-			final_equation = Eq(parse_expr(equation))
-			
-			constraint_stuff = parse_expr(constraint_thing)
-
-			print("Final equation: "+str(final_equation))
-			print("Value of x: "+str(parse_expr('x')))
-			
-			final_eqs.append([final_equation, constraint_stuff])
+			final_eqs.append([final_equation])
 
 		return final_eqs
 
@@ -967,84 +912,7 @@ class circle:
 
 
 
-def solve_equation_stuff(object_list, variables):
-	equations = []
 
-	for obj in object_list:
-		stuff = obj.get_equations()
-		
-		if isinstance(stuff, list):
-			
-			# this is for compatibility if the get_equations function returns a list of equations
-			equations += stuff
-		else:
-			equations.append(stuff)
-	plain_eqs = True
-
-	for eq in equations:
-		if isinstance(eq, list):
-			plain_eqs = False
-			break
-
-	if plain_eqs:  # they are plain equations without any constraints (aka a line and a point for example)
-
-		all_equations = equations
-		print("All equations as a list: "+str(all_equations))
-
-
-		result = sympy.solve(all_equations, variables)
-		print("result: "+str(result))
-	
-	else:
-		result = []
-
-		or_eqs = []
-		plain_eqs = []
-		print("equations: "+str(equations))
-		for eq in equations:
-			print
-			if not isinstance(eq, list):
-				plain_eqs.append(eq)
-			else:
-				or_eqs.append(eq)
-
-		print("Final plain_eqs: "+str(plain_eqs))
-
-		for or_eq1 in or_eqs:
-			restriction_thing = []
-			print("or_eq1 : "+str(or_eq1))
-			print("plain_eqs: "+str(plain_eqs))
-
-			poplist = []
-
-			for i in range(len(or_eq1)):
-				if ">=" in str(or_eq1[i]) or "<=" in str(or_eq1[i]):
-					poplist.append(i)
-					restriction_thing.append(or_eq1[i])
-			
-			'''
-
-			# big thanks to https://stackoverflow.com/questions/11303225/how-to-remove-multiple-indexes-from-a-list-at-the-same-time
-
-			indexes = [2, 3, 5]
-			for index in sorted(indexes, reverse=True):
-				del my_list[index]
-
-			'''
-
-			for index in sorted(poplist, reverse=True):
-				del or_eq1[index]
-
-
-
-
-			#result.append(solve(or_eq1+plain_eqs, variables))
-			thing = solve(or_eq1+plain_eqs, variables)
-			for restriction in restriction_thing:
-				if (restriction).subs(thing):
-					result.append(thing)
-
-	return result
 
 
 
@@ -1057,81 +925,20 @@ def intersection(object1, object2):
 	print("object1 : " + str(type(object1)))
 	print("object2 : " + str(type(object2)))
 	print("================================================")
-
-
-	results = solve_equation_stuff([object1, object2], ('x','y'))
-	return results
-
-	
-	'''
 	equations1 = object1.get_equations()
 
 	equations2 = object2.get_equations()
 
 
-	plain_eqs = True
-
-	for eq in equations1:
-		if isinstance(eq, list):
-			plain_eqs = False
-			break
-	if plain_eqs:
-		for eq in equations2:
-			if isinstance(eq, list):
-				plain_eqs = False
-				break
-
-	if plain_eqs:  # they are plain equations without any constraints (aka a line and a point for example)
-
-		all_equations = equations1 + equations2
-		print("All equations as a list: "+str(all_equations))
+	all_equations = equations1 + equations2
+	print("All equations as a list: "+str(all_equations))
 
 
-		result = sympy.solve(all_equations, ('x', 'y'))
-		print("result: "+str(result))
-	else:
-		result = []
-		plain_eqs = []
+	result = sympy.solve(all_equations, ('x', 'y'))
+	print("result: "+str(result))
 
-		or_eqs1 = []
-		or_eqs2 = []
-
-		for eq in equations1:
-			if not isinstance(eq, list):
-				plain_eqs.append(eq)
-			else:
-				or_eqs1.append(eq)
-
-		for eq in equations2:
-			if not isinstance(eq, list):
-				plain_eqs.append(eq)
-			else:
-				or_eqs2.append(eq)
-
-		if or_eqs1 != [] and or_eqs2 != []:
-
-			for or_eq1 in or_eqs1:
-				for or_eq2 in or_eqs2:
-
-					result.append(solve([or_eq1, or_eq2]+plain_eqs), ('x', 'y'))
-		elif or_eqs1 != [] and or_eqs2 == []:
-
-			for or_eq1 in or_eqs1:
-
-
-				result.append(solve([or_eq1]+plain_eqs), ('x', 'y'))
-
-		elif or_eqs1 == [] and or_eqs2 != []:
-			for or_eq2 in or_eqs2:
-				result.append(solve([or_eq2]+plain_eqs), ('x', 'y'))
-
-		else:
-			# We should not reach this point here.
-			print("Something went wrong in intersection.")
-			exit(1)
 	return result
-	
-	'''
+
 
 
 
@@ -1202,9 +1009,6 @@ def set_attributes(object, attributes):
 def common_object_creation_stuff(arguments, object_name, objects):
 	# first create the dictionary from the arguments
 
-	print("arguments: "+str(arguments))
-	print("object_name: "+str(object_name))
-
 	arg_dict = dict([thing.split("=")[0], thing.split("=")[1]] for thing in arguments)
 	print(arg_dict)
 
@@ -1254,25 +1058,6 @@ def line_command(command:str, objects:list):
 	#objects.append(new_line)
 	#global_objects.append(new_line)
 	return 0
-
-
-
-
-
-def triangle_command(command:str, objects:list):
-
-	args = command.split(" ")
-
-	args = args[1:]
-
-	common_object_creation_stuff(args, "triangle", objects)
-
-	return 0
-
-
-
-
-
 
 def point_command(command:str, objects:list):
 
@@ -1331,13 +1116,8 @@ def intersection_command(command:str, objects:list):
 		print_col(CYELLOW, "Intersections are at points: " + str(results))
 
 	if len(results) == 1:
-		print("Results thing: " + str(results))
-
+		
 		point = results[0]
-
-		if isinstance(point, dict):
-			return point
-
 		x = point[0]
 		y = point[1]
 		return {"x":x, "y":y}
@@ -1501,7 +1281,7 @@ def check_method_command(command_string, all_objects):
 
 def print_object(obj):
 	print(obj)
-	return str(''.join(str(obj).split("\n")))
+	return 0
 
 
 def distance_thing(x0,y0,x1,y1):
@@ -1538,8 +1318,8 @@ def distance_min(object, point, maximumthing=False):
 
 
 	thing = sol_x
-	thing.update(sol_y)
-	print("substitution: "+str(thing))
+	substitution = thing.update(sol_y)
+	print("substitution: "+str(substitution))
 	print("thing: "+str(thing))
 
 	#print("Solutions: "+str(solutions))
@@ -1549,10 +1329,8 @@ def distance_min(object, point, maximumthing=False):
 	#y0 = y0[list(y0.keys())[0]]
 
 	x = Symbol('x')
-	y = Symbol('y')
+	y = Symbol('x')
 	distance_function = distance_thing(x,y,x1,y1) # at this point in a case where there are all known values for the objects this should return a function which only has one variable: "x"
-
-
 
 	print("distance_function : "+str(distance_function))
 	distance_function = distance_function.subs(thing)
@@ -1581,16 +1359,12 @@ def distance_min(object, point, maximumthing=False):
 def mindistobjdot(command:str, objects:list):
 
 	# the first object can be anything, but the second argument must be a point
-
 	arguments = command.split(" ")
 	arguments = arguments[1:]
 	
 	object_thing = get_object_by_name(arguments[0])
 
 	dot_thing = get_object_by_name(arguments[1])
-
-	print("dot_thing: "+str(dot_thing))
-	print("object_thing: "+str(object_thing))
 
 	solution = distance_min(object_thing, dot_thing, maximumthing=False)
 
@@ -1666,24 +1440,7 @@ def mindistpointobjdot(command:str, objects:list):
 
 	resulting_dict = {'x':result[0][0], 'y':result[0][1]}
 
-	print("Resulting dict: "+str(resulting_dict))
-
-	oofstring1 = str(result[0][0])
-	oofstring2 = str(result[0][1])
-
-	print("oofstring1: "+str(oofstring1))
-	print("oofstring2: "+str(oofstring2))
-
-	oofstring1 = ''.join(oofstring1.split(" ")) # get rid of spaces
-	oofstring2 = ''.join(oofstring2.split(" "))
-
-	print("oofstring1 after: "+str(oofstring1))
-
-	print("oofstring2 after: "+str(oofstring2))
-
-	final_dict = {'x':oofstring1, 'y':oofstring2}
-	print("final_dict: "+str(final_dict))
-	return final_dict
+	return resulting_dict
 
 
 # variable_assignment_command(command_string, global_objects)
@@ -1716,12 +1473,8 @@ def variable_assignment_command(command_string: str, global_objects: list, max_a
 
 	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot]
 
-	print("new_command_string == "+str(new_command_string))
-	print("Running subcommand: "+str(commands[index]))
-
-
 	var_values = handle_functions[index](new_command_string, global_objects)
-	print("Returned from the assignment command:")
+
 	print("var_values : "+str(var_values))
 
 
@@ -2043,27 +1796,11 @@ def area_between_intersections(command:str, objects:list):
 
 
 
-def parse_expected(filething):
-
-	
-	fh = open(filething, "r")
-	lines = fh.readlines()
-	fh.close()
-
-	# the expected value is assumed to be after the # on the very last line of the file
-
-	expected_value = lines[-1]
-
-	if "\n" == expected_value[-1]:
-		expected_value = expected_value[:-1]
-	if "#" == expected_value[0]:
-		expected_value = expected_value[1:]
-
-	return expected_value
 
 
 
-def command_mainloop(file=None, testsuite=None):
+
+def command_mainloop(file=None):
 	print_banner()
 	line_counter = 0
 	lines = []
@@ -2075,65 +1812,21 @@ def command_mainloop(file=None, testsuite=None):
 			lines[i] = lines[i][:-1]
 		print("Running commands from file "+str(file)+".")
 
-
-	if testsuite:
-		fh = open(testsuite, "r")
-		lines = fh.readlines()
-		fh.close()
-		for i in range(len(lines)):
-			lines[i] = lines[i][:-1]
-		print("Testsuite from file "+str(testsuite)+".")
-
-
-
 	objects = []
-	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections", "triangle"]
-	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2,0]
-	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2,6]
-
-	command_result = None
-
-	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections, triangle_command]
-	
-
-	expected_result = None
-
-	if testsuite:
-		expected_result = parse_expected(testsuite)
-
+	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections"]
+	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2]
+	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2]
+	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections]
 	while True:
-
-		if not testsuite:
-
-			if line_counter != len(lines):
-				command_string = lines[line_counter]
-				line_counter += 1
-				print("Command string: " + str(command_string))
-			else:
-				command_string = str(input(bcolors.OKBLUE + ">>> " + bcolors.ENDC))
-				#command_string = "line a=1 b=2 c=3"
+		if line_counter != len(lines):
+			command_string = lines[line_counter]
+			line_counter += 1
+			print("Command string: " + str(command_string))
 		else:
-
-			if line_counter != len(lines):
-				command_string = lines[line_counter]
-				line_counter += 1
-				print("Command string: " + str(command_string))
-			else:
-
-				# check the final output:
-				print("The output of the last command: "+str(command_result))
-				print("Expected final result: "+str(expected_result))
-				
-				if str(command_result) != str(expected_result):
-					print("Testsuite failed!")
+			command_string = str(input(bcolors.OKBLUE + ">>> " + bcolors.ENDC))
+			#command_string = "line a=1 b=2 c=3"
 
 		command_start = command_string.split(" ")[0]
-		if command_start == "quit":
-			if testsuite:
-				print("\"quit\" encountered in testsuite. Checking answer:")
-				break
-
-		command_result = None
 		if command_start not in commands:
 
 			if ":=" in command_string: # check variable assignment command
@@ -2149,7 +1842,7 @@ def command_mainloop(file=None, testsuite=None):
 				if len(command_string.split(" ")) == 1 and "." not in command_string.split(" ")[0]:
 					# if the user types just the object name, then print object as string
 					if command_start in get_names(global_objects):
-						command_result = print_object(get_object_by_name(command_start))
+						print_object(get_object_by_name(command_start))
 						continue
 					invalid_command(command_string)
 					continue
@@ -2172,21 +1865,13 @@ def command_mainloop(file=None, testsuite=None):
 		command_string = unpack_variables_in_command(command_string, user_defined_variables)  # this is to unpack arguments like [myvar]
 
 
-		command_result = handle_functions[index](command_string, global_objects)
+		handle_functions[index](command_string, global_objects)
 
-		print("Command result: " + str(command_result))
+
 
 		#global_objects = 
 
-	print("The output of the last command: "+str(command_result))
-	print("Expected final result: "+str(expected_result))
-	passing = False
-	if str(command_result) != str(expected_result):
-		print_col(bcolors.FAIL, "Testsuite " + str(testsuite)+ " failed!")
-	else:
-		print_col(bcolors.OKGREEN, "Testsuite " +str(str(testsuite))+ " passed!")
-		passing = True
-	return command_result, passing
+
 
 
 
@@ -2206,76 +1891,14 @@ if __name__=="__main__":
 		exit(0)
 	'''
 
-
 	if "--file" in sys.argv:
 		filething = sys.argv[sys.argv.index("--file")+1]
 	else:
 		filething = None
 
+	command_mainloop(file=filething)
 
 
-	if "--testsuite" in sys.argv:
-		testsuite = sys.argv[sys.argv.index("--testsuite")+1]
-	else:
-		testsuite = None
-
-	test_all = False
-
-	if "--test-all" in sys.argv:
-		test_all = True
-
-
-	if "--get-expected" in sys.argv:
-
-		results = []
-
-		for test in os.listdir("tests/"):
-			print("Running test "+str(test))
-
-			results.append(command_mainloop(file=filething, testsuite="tests/"+str(test)))
-
-		print("Expected values for the tests:")
-		count = 0
-		for filething in os.listdir("tests/"):
-
-			print("tests/"+filething+" : "+str(results[count]))
-
-			count += 1
-		exit(0)
-
-	if not test_all:
-
-		command_mainloop(file=filething, testsuite=testsuite)
-
-	else:
-		results = []
-		for test in os.listdir("tests/"):
-			print("Running test "+str(test))
-
-			_, passing = command_mainloop(file=filething, testsuite="tests/"+str(test))
-
-			results.append(passing)
-
-		#print summary
-		count = 0
-		fail = False
-		print_col(bcolors.OKBLUE, "=================================================\n\n")
-
-		print_col(bcolors.OKBLUE, "Final results: \n")
-		for thing in os.listdir("tests/"):
-			if results[count]:
-				# pass
-				print_col(bcolors.OKGREEN, "Test: tests/"+str(thing)+" PASSED!")
-			else:
-				# fail:
-				print_col(bcolors.FAIL, "Test: tests/"+str(thing)+" FAILED!")
-				fail=True
-		print("\n\n")
-		if fail:
-			print_col(bcolors.FAIL, "Some tests failed!\n\n")
-		else:
-			print_col(bcolors.OKGREEN, "All tests passed!\n\n")
-		print_col(bcolors.OKBLUE, "=================================================")
 
 
 

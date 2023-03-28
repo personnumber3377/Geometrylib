@@ -1,0 +1,156 @@
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Running commands from file smoketestmindistance.txt.
+Command string: 
+Command string: 
+Command string: point x=5 y=3
+fewfeewfewfewf
+arguments: ['x=5', 'y=3']
+object_name: point
+{'x': '5', 'y': '3'}
+*arguments_thing : {'x': '5', 'y': '3'}
+bullshit: {'x': '5', 'y': '3'}
+bullshit: {'x': '5', 'y': '3'}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['point0']
+objects after appending new_object: ['point0']
+global_objects after appending new_object: ['point0']
+Command string: line a=4 b=-3 c=50
+fewfeewfewfewf
+objects at the start: ['point0']
+arguments: ['a=4', 'b=-3', 'c=50']
+object_name: line
+{'a': '4', 'b': '-3', 'c': '50'}
+*arguments_thing : {'a': '4', 'b': '-3', 'c': '50'}
+bullshit: {'a': '4', 'b': '-3', 'c': '50'}
+bullshit: {'a': '4', 'b': '-3', 'c': '50'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['point0']
+global_objects at the start: ['point0']
+objects after creation of new_object : ['point0']
+gregregregrr
+global_objects at the start: ['point0', 'line0']
+objects after appending new_object: ['point0', 'line0']
+global_objects after appending new_object: ['point0', 'line0']
+objects at the end: ['point0', 'line0']
+[92mCreated new object.[0m
+Command string: line0.name = linething
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: linething
+result: None
+Command string: mindistpointobjdot linething point0
+fewfeewfewfewf
+name_str: linething
+['point0', 'linething']
+---------------------------
+point0
+linething
+---------------------------
+obj.name == point0
+name_str: point0
+['point0', 'linething']
+---------------------------
+point0
+linething
+---------------------------
+dot_thing: =======================
+Type: point
+x = 5
+y = 3
+name = point0
+=======================
+
+object_thing: =======================
+Type: line
+a = 4
+b = -3
+c = 50
+name = linething
+=======================
+		
+oof
+oof22
+object_equation : [Eq(4*x - 3*y + 50, 0)]
+[4*x - 3*y + 0 + 50]
+[x]
+[4*x - 3*y + 0 + 50]
+[x]
+[[4*x - 3*y + 0 + 50]]
+[3*y/4 - 25/2, x]
+Matrix([[4, 3*y - 50]])
+[4*x - 3*y + 0 + 50]
+[y]
+[4*x - 3*y + 0 + 50]
+[y]
+[[4*x - 3*y + 0 + 50]]
+[4*x/3 + 50/3, y]
+Matrix([[3, 4*x + 50]])
+sol_x : {x: 3*y/4 - 25/2}
+sol_y : {y: 4*x/3 + 50/3}
+substitution: {x: 3*y/4 - 25/2, y: 4*x/3 + 50/3}
+thing: {x: 3*y/4 - 25/2, y: 4*x/3 + 50/3}
+bullshit ooof :::: sqrt((x-5)**2+(y-3)**2)
+distance_function : sqrt((x - 5)**2 + (y - 3)**2)
+Substituted distance function: sqrt((x - 5)**2 + (4*x/3 + 41/3)**2)
+f: sqrt((x - 5)**2 + (4*x/3 + 41/3)**2)
+solution: 61/5
+distance_function : sqrt((x - 5)**2 + (4*x/3 + 41/3)**2)
+Minimum distance: 61/5
+name_str: point0
+['point0', 'linething']
+---------------------------
+point0
+linething
+---------------------------
+name_str: linething
+['point0', 'linething']
+---------------------------
+point0
+linething
+---------------------------
+obj.name == point0
+oof
+oof22
+radiuses : 61/5
+Returning this: (x-5)**2+(y-3)**2=(61/5)**2
+circle_equation : [Eq((x - 5)**2 + (y - 3)**2, 3721/25)]
+all equations: [Eq(4*x - 3*y + 50, 0), Eq((x - 5)**2 + (y - 3)**2, 3721/25)]
+[4*x - 3*y + 0 + 50, (x - 5)**2 + (y - 3)**2 - 3721/25]
+[x, y]
+[4*x - 3*y + 0 + 50, (x - 5)**2 + (y - 3)**2 - 3721/25]
+[x, y]
+[[4*x - 3*y + 0 + 50, (x - 5)**2 + (y - 3)**2 - 3721/25]]
+[-50, 4*x - 3*y]
+[3721/25, (x - 5)**2 + (y - 3)**2]
+[Poly(4*x - 3*y + 50, x, y, domain='ZZ'), Poly(25*x**2 - 250*x + 25*y**2 - 150*y - 2871, x, y, domain='ZZ')]
+[Poly(4*x - 3*y + 50, x, y, domain='ZZ'), Poly(25*x**2 - 250*x + 25*y**2 - 150*y - 2871, x, y, domain='ZZ')]
+Result: [(-119/25, 258/25)]
+Resulting dict: {'x': -119/25, 'y': 258/25}
+oofstring1: -119/25
+oofstring2: 258/25
+oofstring1 after: -119/25
+oofstring2 after: 258/25
+final_dict: {'x': '-119/25', 'y': '258/25'}
+Command string: quit
+fewfeewfewfewf
+[92mThank you for using geometrylib! See you again soon![0m

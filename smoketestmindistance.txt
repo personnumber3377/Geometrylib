@@ -3,7 +3,5 @@
 point x=5 y=3
 line a=4 b=-3 c=50
 line0.name = linething
-oof := mindistpointobjdot linething point0
-point [oof]
-point1
+mindistpointobjdot linething point0
 quit
