@@ -1,0 +1,77 @@
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Running commands from file ./tests/check_area_between_intersections.txt.
+Command string: 
+Command string: line a=4 b=-2 c=3
+fewfeewfewfewf
+objects at the start: []
+arguments: ['a=4', 'b=-2', 'c=3']
+object_name: line
+{'a': '4', 'b': '-2', 'c': '3'}
+*arguments_thing : {'a': '4', 'b': '-2', 'c': '3'}
+bullshit: {'a': '4', 'b': '-2', 'c': '3'}
+bullshit: {'a': '4', 'b': '-2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['line0']
+objects after appending new_object: ['line0']
+global_objects after appending new_object: ['line0']
+objects at the end: ['line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline
+result: None
+Command string: area_between_intersections myline y=x**2-10*x+10
+fewfeewfewfewf
+name_str: myline
+['myline']
+---------------------------
+myline
+---------------------------
+oof
+oof22
+[4*x - 2*y + 0 + 3, -x**2 + 10*x + y - 10]
+[x, y]
+[4*x - 2*y + 0 + 3, -x**2 + 10*x + y - 10]
+[x, y]
+[[4*x - 2*y + 0 + 3, -x**2 + 10*x + y - 10]]
+[-3, 4*x - 2*y]
+[10, -x**2 + 10*x + y]
+[Poly(4*x - 2*y + 3, x, y, domain='ZZ'), Poly(-x**2 + 10*x + y - 10, x, y, domain='ZZ')]
+[Poly(4*x - 2*y + 3, x, y, domain='ZZ'), Poly(-x**2 + 10*x + y - 10, x, y, domain='ZZ')]
+intersection_points == [(6 - sqrt(110)/2, 27/2 - sqrt(110)), (sqrt(110)/2 + 6, sqrt(110) + 27/2)]
+thingoof intersection_x_values ==
+[4*x - 2*y + 0 + 3]
+[y]
+ok so it is a bare function and not a system of equations
+[-x**2 + 10*x + y - 10]
+[y]
+ok so it is a bare function and not a system of equations
+functions_in_y_format == [[2*x + 3/2], [x**2 - 10*x + 10]]
+bigger function: 2*x + 3/2
+smaller_fun : x**2 - 10*x + 10
+intersection_x_values[0] == 6 - sqrt(110)/2
+intersection_x_values[1] == sqrt(110)/2 + 6
+[33mArea: -(sqrt(110)/2 + 6)**3/3 - 17*sqrt(110)/2 - 6*(6 - sqrt(110)/2)**2 + (6 - sqrt(110)/2)**3/3 + 6*(sqrt(110)/2 + 6)**2[0m
+Command result: -(sqrt(110)/2 + 6)**3/3 - 17*sqrt(110)/2 - 6*(6 - sqrt(110)/2)**2 + (6 - sqrt(110)/2)**3/3 + 6*(sqrt(110)/2 + 6)**2
+Command string: quit
+fewfeewfewfewf
+[92mThank you for using geometrylib! See you again soon![0m

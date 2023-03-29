@@ -1,0 +1,8 @@
+
+circle xc=0 yc=0 r=1
+circle0.name = mycircle
+tangents mycircle
+quit
+
+
+#[(x*x0 - 1)/sqrt(1 - x0**2), (-x*x0 + 1)/sqrt(1 - x0**2)]

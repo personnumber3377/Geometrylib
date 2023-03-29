@@ -1,7 +1,6 @@
 Welcome to geometrylib 1.0 !
 Type "help" for help menu.
-Running commands from file stuff/triangle.txt.
-Command string: 
+Running commands from file ./tests/check_intersection_triangle_circle.txt.
 Command string: triangle x0=0.4 y0=0.1 x1=1 y1=0.2 x2=1 y2=1
 fewfeewfewfewf
 arguments: ['x0=0.4', 'y0=0.1', 'x1=1', 'y1=0.2', 'x2=1', 'y2=1']
@@ -30,75 +29,73 @@ global_objects at the start: ['triangle0']
 objects after appending new_object: ['triangle0']
 global_objects after appending new_object: ['triangle0']
 Command result: 0
-Command string: line a=0.1 b=1 c=-0.5
+Command string: circle xc=0.8 yc=0.4 r=0.3
 fewfeewfewfewf
-objects at the start: ['triangle0']
-arguments: ['a=0.1', 'b=1', 'c=-0.5']
-object_name: line
-{'a': '0.1', 'b': '1', 'c': '-0.5'}
-*arguments_thing : {'a': '0.1', 'b': '1', 'c': '-0.5'}
-bullshit: {'a': '0.1', 'b': '1', 'c': '-0.5'}
-bullshit: {'a': '0.1', 'b': '1', 'c': '-0.5'}
-the_object.name == line0
-setting parameter a to this: a0
-the_object.name == line0
-setting parameter b to this: b0
-the_object.name == line0
-setting parameter c to this: c0
-the_object.name == line0
+arguments: ['xc=0.8', 'yc=0.4', 'r=0.3']
+object_name: circle
+{'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+*arguments_thing : {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+bullshit: {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+bullshit: {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+the_object.name == circle0
+setting parameter xc to this: xc0
+the_object.name == circle0
+setting parameter yc to this: yc0
+the_object.name == circle0
+setting parameter r to this: r0
+the_object.name == circle0
 setting parameter x to this: x0
-the_object.name == line0
+the_object.name == circle0
 setting parameter y to this: y0
 Names of global objects at the end of common_arg_stuff: ['triangle0']
 global_objects at the start: ['triangle0']
 objects after creation of new_object : ['triangle0']
 gregregregrr
-global_objects at the start: ['triangle0', 'line0']
-objects after appending new_object: ['triangle0', 'line0']
-global_objects after appending new_object: ['triangle0', 'line0']
-objects at the end: ['triangle0', 'line0']
+global_objects at the start: ['triangle0', 'circle0']
+objects after appending new_object: ['triangle0', 'circle0']
+global_objects after appending new_object: ['triangle0', 'circle0']
 [92mCreated new object.[0m
 Command result: 0
-Command string: intersect triangle0 line0
+Command string: intersect triangle0 circle0
 fewfeewfewfewf
-Args : ['intersect', 'triangle0', 'line0']
+Args : ['intersect', 'triangle0', 'circle0']
 obj_name1 : triangle0
-obj_name2 : line0
+obj_name2 : circle0
 name_str: triangle0
-['triangle0', 'line0']
+['triangle0', 'circle0']
 ---------------------------
 triangle0
-line0
+circle0
 ---------------------------
-name_str: line0
-['triangle0', 'line0']
+name_str: circle0
+['triangle0', 'circle0']
 ---------------------------
 triangle0
-line0
+circle0
 ---------------------------
 obj.name == triangle0
 poopooo
-obj1: <__main__.triangle object at 0x7f3207c47100>
+obj1: <__main__.triangle object at 0x7f7168135100>
 obj2: =======================
-Type: line
-a = 0.1
-b = 1
-c = -0.5
-name = line0
+Type: circle
+x0 = 0.8
+y0 = 0.4
+r = 0.3
+name = circle0
 =======================
 		
 ================================================
-object1 : <__main__.triangle object at 0x7f3207c47100>
+object1 : <__main__.triangle object at 0x7f7168135100>
 object2 : =======================
-Type: line
-a = 0.1
-b = 1
-c = -0.5
-name = line0
+Type: circle
+x0 = 0.8
+y0 = 0.4
+r = 0.3
+name = circle0
 =======================
 		
 object1 : <class '__main__.triangle'>
-object2 : <class '__main__.line'>
+object2 : <class '__main__.circle'>
 ================================================
 Setting a to this: ((0.1)-(0.2))/((0.4*0.2)-(1*0.1))
 Line-equation thing: (5.00000000000000)*x+(-30.0000000000000)*y+1=0
@@ -142,58 +139,63 @@ resulting thing: 1 - 1.0*x
 constraint_thing: ['x<=1', 'x>=1', 'y<=1', 'y>=0.2']
 Final equation: Eq(1 - 1.0*x, 0)
 Value of x: x
+Circle equation bullshit: 
+((x)-(0.8))**2+((y)-(0.4))**2=(0.3)**2
 oof
 oof22
-equations: [[Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]], [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]], [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]], Eq(0.1*x + y - 0.5, 0)]
-Final plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
+equations: [[Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]], [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]], [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]], Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+Final plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
 or_eq1 : [Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
-plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
-[5*x - 30*y + 1, x/10 + y - 1/2]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[5*x - 30*y + 1, x/10 + y - 1/2]
+[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[[5*x - 30*y + 1, x/10 + y - 1/2]]
+[[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
 [-1, 5*x - 30*y]
-[1/2, x/10 + y]
-Matrix([[5, -30, -1], [1, 10, 5]])
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(5*x - 30*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(5*x - 30*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
 Thing stuff: 
 restriction_thing: [[x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
-thing: {x: 1.75000000000000, y: 0.325000000000000}
+thing: [(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)]
 current restriction: [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]
-substitution: {x: 1.75000000000000, y: 0.325000000000000}
+substitution: [(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)]
 or_eq1 : [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
-plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
-[-3*x + 2*y + 1, x/10 + y - 1/2]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[-3*x + 2*y + 1, x/10 + y - 1/2]
+[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[[-3*x + 2*y + 1, x/10 + y - 1/2]]
+[[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
 [-1, -3*x + 2*y]
-[1/2, x/10 + y]
-Matrix([[-3, 2, -1], [1, 10, 5]])
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(-3*x + 2*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(-3*x + 2*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
 Thing stuff: 
 restriction_thing: [[x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
-thing: {x: 0.625000000000000, y: 0.437500000000000}
+thing: [(0.523076923076923, 0.284615384615385), (0.800000000000000, 0.700000000000000)]
 current restriction: [x <= 1, x >= 0.4, y <= 1, y >= 0.1]
-substitution: {x: 0.625000000000000, y: 0.437500000000000}
+substitution: [(0.523076923076923, 0.284615384615385), (0.800000000000000, 0.700000000000000)]
 or_eq1 : [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]]
-plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
-[1 - x, x/10 + y - 1/2]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[1 - x, x/10 + y - 1/2]
+[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
 [x, y]
-[[1 - x, x/10 + y - 1/2]]
+[[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
 [1, x]
-[1/2, x/10 + y]
-Matrix([[1, 0, 1], [1, 10, 5]])
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(x - 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(x - 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
 Thing stuff: 
 restriction_thing: [[x <= 1, x >= 1, y <= 1, y >= 0.2]]
-thing: {x: 1.00000000000000, y: 0.400000000000000}
+thing: [(1.00000000000000, 0.176393202250021), (1.00000000000000, 0.623606797749979)]
 current restriction: [x <= 1, x >= 1, y <= 1, y >= 0.2]
-substitution: {x: 1.00000000000000, y: 0.400000000000000}
+substitution: [(1.00000000000000, 0.176393202250021), (1.00000000000000, 0.623606797749979)]
 [33mObjects intersect atleast at one point.[0m
-[33mIntersections are at points: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}][0m
-Command result: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+[33mIntersections are at points: [[(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)], [(0.523076923076923, 0.284615384615385), (0.800000000000000, 0.700000000000000)], [(1.00000000000000, 0.176393202250021), (1.00000000000000, 0.623606797749979)]][0m
+Command result: [[(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)], [(0.523076923076923, 0.284615384615385), (0.800000000000000, 0.700000000000000)], [(1.00000000000000, 0.176393202250021), (1.00000000000000, 0.623606797749979)]]
 Command string: quit
 fewfeewfewfewf
 [92mThank you for using geometrylib! See you again soon![0m

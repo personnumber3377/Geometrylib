@@ -212,6 +212,16 @@ def get_ranges(x0,y0,x1,y1):
 	y1 = str(y1)
 
 
+	print("=======================\n\n")
+	print("oofthingaaaa")
+	print("x0: "+x0)
+	print("y0: "+y0)
+	print("x1: "+x1)
+	print("y1: "+y1)
+
+	print("=======================\n\n")
+
+
 
 	if x0 > x1:
 		output.append("x>="+str(x1))
@@ -353,15 +363,15 @@ class triangle:
 
 		# basically just return the list of lines, except that there are constrictions on the answers
 
-		line_equations = [self.get_line_equation(self.x0, self.y0, self.x1, self.y1), self.get_line_equation(self.x0, self.y0, self.x1, self.y1), self.get_line_equation(self.x0, self.y0, self.x2, self.y2)]
+		line_equations = [self.get_line_equation(self.x0, self.y0, self.x1, self.y1), self.get_line_equation(self.x0, self.y0, self.x2, self.y2), self.get_line_equation(self.x1, self.y1, self.x2, self.y2)]
 
 		constraints = []
 
-		constraints += get_ranges(self.x0, self.y0, self.x1, self.y1)
+		constraints.append(get_ranges(self.x0, self.y0, self.x1, self.y1))
 
-		constraints += get_ranges(self.x0, self.y0, self.x2, self.y2)
+		constraints.append(get_ranges(self.x0, self.y0, self.x2, self.y2))
 
-		constraints += get_ranges(self.x1, self.y1, self.x2, self.y2)
+		constraints.append(get_ranges(self.x1, self.y1, self.x2, self.y2))
 
 		final_eqs = []
 
@@ -376,11 +386,13 @@ class triangle:
 
 			print("constraint_thing: "+str(constraint_thing))
 
-			print("parse_expr(constraint_thing) == "+str(parse_expr(constraint_thing)))
+			#print("parse_expr(constraint_thing) == "+str(parse_expr(constraint_thing)))
 
 			final_equation = Eq(parse_expr(equation))
 			
-			constraint_stuff = parse_expr(constraint_thing)
+			#constraint_stuff = parse_expr(constraint_thing)
+
+			constraint_stuff = [parse_expr(thing) for thing in constraint_thing]
 
 			print("Final equation: "+str(final_equation))
 			print("Value of x: "+str(parse_expr('x')))
@@ -1040,9 +1052,145 @@ def solve_equation_stuff(object_list, variables):
 
 			#result.append(solve(or_eq1+plain_eqs, variables))
 			thing = solve(or_eq1+plain_eqs, variables)
-			for restriction in restriction_thing:
-				if (restriction).subs(thing):
-					result.append(thing)
+
+			print("Thing stuff: ")
+			print("restriction_thing: "+str(restriction_thing))
+
+			print("thing: "+str(thing))
+			if isinstance(thing, list):
+
+				# handle the list thing:
+
+				# this is for when there are multiple solution stuff:
+
+				if len(thing) > 1:
+
+					# handle multiple solutions aka check them all sequentially
+
+
+					print("poopoo")
+					#exit(1)
+
+					for sol in thing:
+
+						if isinstance(sol, dict):
+
+
+							# handle multiple dictionary stuff
+
+							thing = sol
+
+							for restriction in restriction_thing:
+
+								print("current restriction: "+str(restriction))
+								print("substitution: "+str(thing))
+					
+								passing = True
+					
+								oofthing = restriction[0]
+								for restriction_expr in restriction:
+						
+									oofthing = (restriction_expr).subs(thing)
+
+									if oofthing == False:
+										passing = False
+										break
+
+								if passing:
+									result.append(thing)
+
+						else:
+
+
+							if len(sol) == 2:
+								thing = {"x":sol[0], "y":sol[1]}
+							elif len(sol) == 1:
+								thing = {"x":sol[0]}
+							else:
+								fail("Invalid length for solution thing in solve_equation_stuff:")
+								print("sol: "+str(sol))
+								exit(1)
+
+
+
+							# this is basically for when they are tuples or lists.
+							# for example in the intersection between a triangle and a circle: [(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)]
+
+							for restriction in restriction_thing:
+
+								print("current restriction: "+str(restriction))
+								print("substitution: "+str(thing))
+					
+								passing = True
+					
+								oofthing = restriction[0]
+								for restriction_expr in restriction:
+						
+									oofthing = (restriction_expr).subs(thing)
+
+									if oofthing == False:
+										passing = False
+										break
+
+								if passing:
+									result.append(thing)
+
+
+
+
+
+				else:
+
+					thing = thing[0]
+
+					for restriction in restriction_thing:
+
+						print("current restriction: "+str(restriction))
+						print("substitution: "+str(thing))
+					
+						passing = True
+					
+						oofthing = restriction[0]
+						for restriction_expr in restriction:
+						
+							oofthing = (oofthing).subs(thing)
+
+							if oofthing == False:
+								passing = False
+								break
+
+						if passing:
+							result.append(thing)
+
+
+			else:
+
+
+
+				for restriction in restriction_thing:
+
+					print("current restriction: "+str(restriction))
+					print("substitution: "+str(thing))
+					
+					passing = True
+					
+					oofthing = restriction[0]
+					for restriction_expr in restriction:
+						
+						oofthing = (oofthing).subs(thing)
+
+						if oofthing == False:
+							passing = False
+							break
+
+					if passing:
+						result.append(thing)
+
+
+
+					#if (restriction).subs(thing):
+					#	print("passed this: "+str(restriction)+"  "+str(thing))
+					#	result.append(thing)
 
 	return result
 
@@ -1302,6 +1450,41 @@ def help_command(command:str, objects:list):
 
 def get_names(object_list):
 	return [obj.name for obj in object_list]
+
+
+
+def angle_between_lines(line1, line2):
+
+	result = simplify(parse_expr("Abs(atan(-{}/{})-atan(-{}/{}))".format(str(line1.a), str(line1.b), str(line2.a), str(line2.b))))
+	# it is in radians so convert to degrees.
+
+	result *=360
+	result /= 2
+	result /= 3.14159265358979323846 # pi
+	return result
+
+
+
+def angle_between_lines_command(command:str, objects:list):
+
+	# returns the angle between two lines
+	args = command.split(" ")
+
+	args = args[1:]
+
+	first_line = get_object_by_name(args[0])
+	second_line = get_object_by_name(args[1])
+
+	final_result = angle_between_lines(first_line, second_line)
+
+	print_col(bcolors.OKBLUE, "Angle between lines: "+str(final_result)+" == " + str((final_result).evalf()))
+
+	return (final_result).evalf()
+
+
+
+
+
 
 
 
@@ -2021,6 +2204,9 @@ def area_between_intersections(command:str, objects:list):
 	difference_function = bigger_function - smaller_fun
 
 
+	print("Difference function: "+str(difference_function))
+
+
 	print("intersection_x_values[0] == "+str(intersection_x_values[0]))
 	print("intersection_x_values[1] == "+str(intersection_x_values[1]))
 
@@ -2038,6 +2224,90 @@ def area_between_intersections(command:str, objects:list):
 	#obj2 = get_object_by_name(tokens[2])
 
 
+
+def get_tangent_from_point_and_derivative(x0thing,fx0):
+
+	xnew = Symbol('xnew')
+	x0 = Symbol('x0')
+	x = Symbol('x')
+	k = simplify(Derivative(fx0,x0thing)).subs({str(x0thing):xnew})
+	print("k : "+str(k))
+
+	# y - y0 = k*(x - x0)
+
+	print("x0 : "+str(x0))
+	print("fx0 : "+str(fx0))
+	derivative_line = simplify(k*(x - x0thing.subs({x0thing:xnew})) + fx0.subs({str(x0thing):xnew}))
+	print("derivative_line: "+str(derivative_line))
+
+	return derivative_line
+
+
+
+
+
+
+def get_tangents(objects:list):
+
+	# get the tangentlines which are shared by all the objects (if there exists any)
+
+	if len(objects) == 1:
+		
+		# just get the tangent line stuff at x=x0 and return it
+
+		# triangles are not supported because reasons.
+
+		# the point is (x0,f(x0)) and the derivative aka k is derivative(f(x),x)|x=x0
+		obj = objects[0]
+
+		equation_list = obj.get_equations()
+
+		# first solve y from the equation
+
+		#y_eqs = []
+		
+		tangent_lines = []
+		for eq in equation_list:
+
+			y_eqs = solve(eq, 'y')
+
+			for y_eq in y_eqs:
+
+
+				#k = simplify(derivative(y_eq, x))
+
+				x0 = Symbol('x0')
+
+				print("y_eq: "+str(y_eq))
+				print("equation_list: "+str(equation_list))
+
+				tangent = get_tangent_from_point_and_derivative(x0,y_eq.subs({"x":x0}))
+
+				tangent = tangent.subs({"xnew":x0})
+
+				tangent_lines.append(tangent)
+		
+		return tangent_lines
+
+
+
+
+
+
+
+
+
+def get_tangents_command(command:str, objects: list):
+
+	# get_tangents
+
+	args = command.split(" ")
+	args = args[1:]
+
+	objects = [get_object_by_name(x) for x in args]
+	result = get_tangents(objects)
+
+	return result
 
 
 
@@ -2087,13 +2357,13 @@ def command_mainloop(file=None, testsuite=None):
 
 
 	objects = []
-	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections", "triangle"]
-	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2,0]
-	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2,6]
+	commands = ["line", "intersect", "help", "quit", "objects", "circle", "point", "mindistobjdot", "maxdistobjdot", "mindistpointobjdot", "maxdistpointobjdot", "integrate", "area_between_intersections", "triangle", "angle_lines", "tangents"]
+	min_arg_lengths = [0,0,0,0,0,0,0,2,2,2,2,4,2,0,2,1]
+	max_arg_lengths = [3,2,0,0,0,3,2,2,2,2,2,4,2,6,2,100]
 
 	command_result = None
 
-	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections, triangle_command]
+	handle_functions = [line_command, intersection_command, help_command, quit_command, objects_command, circle_command, point_command, mindistobjdot, maxdistobjdot, mindistpointobjdot, maxdistpointobjdot, integrate_command, area_between_intersections, triangle_command, angle_between_lines_command, get_tangents_command]
 	
 
 	expected_result = None
@@ -2181,6 +2451,10 @@ def command_mainloop(file=None, testsuite=None):
 	print("The output of the last command: "+str(command_result))
 	print("Expected final result: "+str(expected_result))
 	passing = False
+
+	print("command_result: " + str(command_result))
+	print("expected_result: "+str(expected_result))
+
 	if str(command_result) != str(expected_result):
 		print_col(bcolors.FAIL, "Testsuite " + str(testsuite)+ " failed!")
 	else:
@@ -2192,6 +2466,11 @@ def command_mainloop(file=None, testsuite=None):
 
 
 
+def reset_state():
+
+	global_objects = []
+	global_things = []
+	user_defined_variables = {}
 
 
 
@@ -2234,6 +2513,10 @@ if __name__=="__main__":
 
 			results.append(command_mainloop(file=filething, testsuite="tests/"+str(test)))
 
+			# reset state:
+
+			reset_state()
+
 		print("Expected values for the tests:")
 		count = 0
 		for filething in os.listdir("tests/"):
@@ -2256,9 +2539,17 @@ if __name__=="__main__":
 
 			results.append(passing)
 
+			reset_state()   # reset the state such that we do not fuck up the next tests
+			global_objects = []
+			global_things = []
+			user_defined_variables = {}
+
 		#print summary
 		count = 0
 		fail = False
+
+		print("results list: "+str(results))
+
 		print_col(bcolors.OKBLUE, "=================================================\n\n")
 
 		print_col(bcolors.OKBLUE, "Final results: \n")
@@ -2270,20 +2561,13 @@ if __name__=="__main__":
 				# fail:
 				print_col(bcolors.FAIL, "Test: tests/"+str(thing)+" FAILED!")
 				fail=True
+			count += 1
 		print("\n\n")
 		if fail:
 			print_col(bcolors.FAIL, "Some tests failed!\n\n")
 		else:
 			print_col(bcolors.OKGREEN, "All tests passed!\n\n")
 		print_col(bcolors.OKBLUE, "=================================================")
-
-
-
-
-	
-
-
-		
 
 
 

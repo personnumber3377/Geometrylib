@@ -7,4 +7,4 @@ point [myvar][0:1]
 point0.name = mypoint
 mypoint
 quit
-#=======================Type: pointx = 1y = -2name = mypoint=======================
+#=======================Type: pointx = 1y = y0name = mypoint=======================

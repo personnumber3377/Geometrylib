@@ -1,0 +1,2365 @@
+Running test check_var_assignment_to_function_result.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_var_assignment_to_function_result.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: []
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: []
+global_objects at the start: []
+objects after creation of new_object : []
+gregregregrr
+global_objects at the start: ['line0']
+objects after appending new_object: ['line0']
+global_objects after appending new_object: ['line0']
+objects at the end: ['line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline1
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline1
+result: None
+Command string: line a=4 b=5 c=6
+fewfeewfewfewf
+objects at the start: ['myline1']
+arguments: ['a=4', 'b=5', 'c=6']
+object_name: line
+{'a': '4', 'b': '5', 'c': '6'}
+*arguments_thing : {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1']
+global_objects at the start: ['myline1']
+objects after creation of new_object : ['myline1']
+gregregregrr
+global_objects at the start: ['myline1', 'line0']
+objects after appending new_object: ['myline1', 'line0']
+global_objects after appending new_object: ['myline1', 'line0']
+objects at the end: ['myline1', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline2
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline2
+result: None
+Command string: myvar := intersect myline1 myline2
+poopooshit
+fewfeewfewfewf
+stuff == ['myline1', 'myline2']
+command_string: intersect myline1 myline2
+new_command_string == intersect myline1 myline2
+Running subcommand: intersect
+Args : ['intersect', 'myline1', 'myline2']
+obj_name1 : myline1
+obj_name2 : myline2
+name_str: myline1
+['myline1', 'myline2']
+---------------------------
+myline1
+myline2
+---------------------------
+name_str: myline2
+['myline1', 'myline2']
+---------------------------
+myline1
+myline2
+---------------------------
+obj.name == myline1
+poopooo
+obj1: =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline1
+=======================
+		
+obj2: =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = myline2
+=======================
+		
+================================================
+object1 : =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline1
+=======================
+		
+object2 : =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = myline2
+=======================
+		
+object1 : <class '__main__.line'>
+object2 : <class '__main__.line'>
+================================================
+oof
+oof22
+oof
+oof22
+All equations as a list: [Eq(x + 2*y + 3, 0), Eq(4*x + 5*y + 6, 0)]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]]
+[-3, x + 2*y]
+[-6, 4*x + 5*y]
+Matrix([[1, 2, -3], [4, 5, -6]])
+result: {x: 1, y: -2}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: {x: 1, y: -2}[0m
+Returned from the assignment command:
+var_values : {x: 1, y: -2}
+var_values.keys()dict_keys([x, y])
+['x', 'y']
+['1', '-2']
+Command string: point [myvar]
+fewfeewfewfewf
+str(var_values) == {x: 1, y: -2}
+start == None
+end == None
+var_values final: {x: 1, y: -2}
+arguments: ['x=1', 'y=-2']
+object_name: point
+{'x': '1', 'y': '-2'}
+*arguments_thing : {'x': '1', 'y': '-2'}
+bullshit: {'x': '1', 'y': '-2'}
+bullshit: {'x': '1', 'y': '-2'}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2']
+global_objects at the start: ['myline1', 'myline2']
+objects after creation of new_object : ['myline1', 'myline2']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint
+thing
+name_str: mypoint
+['myline1', 'myline2', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+=======================
+Type: point
+x = 1
+y = -2
+name = mypoint
+=======================
+
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: =======================Type: pointx = 1y = -2name = mypoint=======================
+Expected final result: =======================Type: pointx = 1y = -2name = mypoint=======================
+command_result: =======================Type: pointx = 1y = -2name = mypoint=======================
+expected_result: =======================Type: pointx = 1y = -2name = mypoint=======================
+[92mTestsuite tests/check_var_assignment_to_function_result.txt passed![0m
+Running test check_line_intersect.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_line_intersect.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint']
+global_objects at the start: ['myline1', 'myline2', 'mypoint']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line a=4 b=5 c=6
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'line0']
+arguments: ['a=4', 'b=5', 'c=6']
+object_name: line
+{'a': '4', 'b': '5', 'c': '6'}
+*arguments_thing : {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+the_object.name == line1
+setting parameter a to this: a1
+the_object.name == line1
+setting parameter b to this: b1
+the_object.name == line1
+setting parameter c to this: c1
+the_object.name == line1
+setting parameter x to this: x1
+the_object.name == line1
+setting parameter y to this: y1
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'line0']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'line0']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'line0']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+[92mCreated new object.[0m
+Command result: 0
+Command string: intersect line0 line1
+fewfeewfewfewf
+Args : ['intersect', 'line0', 'line1']
+obj_name1 : line0
+obj_name2 : line1
+name_str: line0
+['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+---------------------------
+myline1
+myline2
+mypoint
+line0
+line1
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+name_str: line1
+['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+---------------------------
+myline1
+myline2
+mypoint
+line0
+line1
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == line0
+poopooo
+obj1: =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = line0
+=======================
+		
+obj2: =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = line1
+=======================
+		
+================================================
+object1 : =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = line0
+=======================
+		
+object2 : =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = line1
+=======================
+		
+object1 : <class '__main__.line'>
+object2 : <class '__main__.line'>
+================================================
+oof
+oof22
+oof
+oof22
+All equations as a list: [Eq(x + 2*y + 3, 0), Eq(4*x + 5*y + 6, 0)]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]]
+[-3, x + 2*y]
+[-6, 4*x + 5*y]
+Matrix([[1, 2, -3], [4, 5, -6]])
+result: {x: 1, y: -2}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: {x: 1, y: -2}[0m
+Command result: {x: 1, y: -2}
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: {x: 1, y: -2}
+Expected final result: {x: 1, y: -2}
+command_result: {x: 1, y: -2}
+expected_result: {x: 1, y: -2}
+[92mTestsuite tests/check_line_intersect.txt passed![0m
+Running test check_var_subsequences.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_var_subsequences.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line2
+setting parameter a to this: a2
+the_object.name == line2
+setting parameter b to this: b2
+the_object.name == line2
+setting parameter c to this: c2
+the_object.name == line2
+setting parameter x to this: x2
+the_object.name == line2
+setting parameter y to this: y2
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'line0', 'line1']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'line0', 'line1', 'line2']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0', 'line1', 'line2']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'line0', 'line1', 'line2']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'line0', 'line1', 'line2']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline1
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline1
+result: None
+Command string: line a=4 b=5 c=6
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2']
+arguments: ['a=4', 'b=5', 'c=6']
+object_name: line
+{'a': '4', 'b': '5', 'c': '6'}
+*arguments_thing : {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline2
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline2
+result: None
+Command string: myvar := intersect myline1 myline2
+poopooshit
+fewfeewfewfewf
+stuff == ['myline1', 'myline2']
+command_string: intersect myline1 myline2
+new_command_string == intersect myline1 myline2
+Running subcommand: intersect
+Args : ['intersect', 'myline1', 'myline2']
+obj_name1 : myline1
+obj_name2 : myline2
+name_str: myline1
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+---------------------------
+name_str: myline2
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+---------------------------
+obj.name == myline1
+poopooo
+obj1: =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline1
+=======================
+		
+obj2: =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = myline2
+=======================
+		
+================================================
+object1 : =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline1
+=======================
+		
+object2 : =======================
+Type: line
+a = 4
+b = 5
+c = 6
+name = myline2
+=======================
+		
+object1 : <class '__main__.line'>
+object2 : <class '__main__.line'>
+================================================
+oof
+oof22
+oof
+oof22
+All equations as a list: [Eq(x + 2*y + 3, 0), Eq(4*x + 5*y + 6, 0)]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]
+[x, y]
+[[x + 2*y + 0 + 3, 4*x + 5*y + 0 + 6]]
+[-3, x + 2*y]
+[-6, 4*x + 5*y]
+Matrix([[1, 2, -3], [4, 5, -6]])
+result: {x: 1, y: -2}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: {x: 1, y: -2}[0m
+Returned from the assignment command:
+var_values : {x: 1, y: -2}
+var_values.keys()dict_keys([x, y])
+['x', 'y']
+['1', '-2']
+Command string: point [myvar][0:1]
+fewfeewfewfewf
+str(var_values) == {x: 1, y: -2}
+start == 0
+end == 1
+abcdefg
+l == (x,)
+var_values final: {x: 1}
+arguments: ['x=1']
+object_name: point
+{'x': '1'}
+*arguments_thing : {'x': '1'}
+bullshit: {'x': '1'}
+bullshit: {'x': '1'}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint
+thing
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+=======================
+Type: point
+x = 1
+y = -2
+name = mypoint
+=======================
+
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: =======================Type: pointx = 1y = -2name = mypoint=======================
+Expected final result: =======================Type: pointx = 1y = -2name = mypoint=======================
+command_result: =======================Type: pointx = 1y = -2name = mypoint=======================
+expected_result: =======================Type: pointx = 1y = -2name = mypoint=======================
+[92mTestsuite tests/check_var_subsequences.txt passed![0m
+Running test check_max_output_dot_line.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_max_output_dot_line.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline
+result: None
+Command string: point
+fewfeewfewfewf
+arguments: []
+object_name: point
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint.set_point_to_values 0 0
+thing
+bullshitrgregreg
+command: mypoint.set_point_to_values 0 0
+self.method_arg_types : [['float', 'float'], []]
+self.method_arg_types : [['float', 'float'], []]
+SHITSHITSHIT
+self.x == 0.0
+self.y == 0.0
+x_in: 0.0
+y_in: 0.0
+result: 0
+Command string: maxdistobjdot myline mypoint
+fewfeewfewfewf
+name_str: myline
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+oof
+oof22
+object_equation : [Eq(x + 2*y + 3, 0)]
+[x + 2*y + 0 + 3]
+[x]
+[x + 2*y + 0 + 3]
+[x]
+[[x + 2*y + 0 + 3]]
+[-2*y - 3, x]
+Matrix([[1, -2*y - 3]])
+[x + 2*y + 0 + 3]
+[y]
+[x + 2*y + 0 + 3]
+[y]
+[[x + 2*y + 0 + 3]]
+[-x/2 - 3/2, y]
+Matrix([[2, -x - 3]])
+sol_x : {x: -2*y - 3}
+sol_y : {y: -x/2 - 3/2}
+substitution: {x: -2*y - 3, y: -x/2 - 3/2}
+thing: {x: -2*y - 3, y: -x/2 - 3/2}
+bullshit ooof :::: sqrt((x-0.0)**2+(y-0.0)**2)
+distance_function : sqrt(x**2 + y**2)
+Substituted distance function: sqrt(x**2 + (-x/2 - 3/2)**2)
+f: sqrt(x**2 + (-x/2 - 3/2)**2)
+solution: oo
+distance_function : sqrt(x**2 + (-x/2 - 3/2)**2)
+Maximum distance: oo
+Command result: oo
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: oo
+Expected final result: oo
+command_result: oo
+expected_result: oo
+[92mTestsuite tests/check_max_output_dot_line.txt passed![0m
+Running test check_intersection_triangle_circle.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_intersection_triangle_circle.txt.
+Command string: triangle x0=0.4 y0=0.1 x1=1 y1=0.2 x2=1 y2=1
+fewfeewfewfewf
+arguments: ['x0=0.4', 'y0=0.1', 'x1=1', 'y1=0.2', 'x2=1', 'y2=1']
+object_name: triangle
+{'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+*arguments_thing : {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+bullshit: {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+bullshit: {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+the_object.name == triangle0
+setting parameter x0 to this: x00
+the_object.name == triangle0
+setting parameter y0 to this: y00
+the_object.name == triangle0
+setting parameter x1 to this: x10
+the_object.name == triangle0
+setting parameter y1 to this: y10
+the_object.name == triangle0
+setting parameter x2 to this: x20
+the_object.name == triangle0
+setting parameter y2 to this: y20
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+Command result: 0
+Command string: circle xc=0.8 yc=0.4 r=0.3
+fewfeewfewfewf
+arguments: ['xc=0.8', 'yc=0.4', 'r=0.3']
+object_name: circle
+{'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+*arguments_thing : {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+bullshit: {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+bullshit: {'xc': '0.8', 'yc': '0.4', 'r': '0.3'}
+the_object.name == circle0
+setting parameter xc to this: xc0
+the_object.name == circle0
+setting parameter yc to this: yc0
+the_object.name == circle0
+setting parameter r to this: r0
+the_object.name == circle0
+setting parameter x to this: x0
+the_object.name == circle0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: intersect triangle0 circle0
+fewfeewfewfewf
+Args : ['intersect', 'triangle0', 'circle0']
+obj_name1 : triangle0
+obj_name2 : circle0
+name_str: triangle0
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+circle0
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+name_str: circle0
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+circle0
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+obj.name == triangle0
+poopooo
+obj1: <__main__.triangle object at 0x7f065a62cbe0>
+obj2: =======================
+Type: circle
+x0 = 0.8
+y0 = 0.4
+r = 0.3
+name = circle0
+=======================
+		
+================================================
+object1 : <__main__.triangle object at 0x7f065a62cbe0>
+object2 : =======================
+Type: circle
+x0 = 0.8
+y0 = 0.4
+r = 0.3
+name = circle0
+=======================
+		
+object1 : <class '__main__.triangle'>
+object2 : <class '__main__.circle'>
+================================================
+Setting a to this: ((0.1)-(0.2))/((0.4*0.2)-(1*0.1))
+Line-equation thing: (5.00000000000000)*x+(-30.0000000000000)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+Setting a to this: ((0.1)-(1))/((0.4*1)-(1*0.1))
+Line-equation thing: (-3.00000000000000)*x+(2.00000000000000)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+Setting a to this: ((0.2)-(1))/((1*1)-(1*0.2))
+Line-equation thing: (-1.00000000000000)*x+(0)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+=======================
+
+
+oofthingaaaa
+x0: 0.4
+y0: 0.1
+x1: 1
+y1: 0.2
+=======================
+
+
+Output: ['x<=1', 'x>=0.4', 'y<=0.2', 'y>=0.1']
+=======================
+
+
+oofthingaaaa
+x0: 0.4
+y0: 0.1
+x1: 1
+y1: 1
+=======================
+
+
+Output: ['x<=1', 'x>=0.4', 'y<=1', 'y>=0.1']
+=======================
+
+
+oofthingaaaa
+x0: 1
+y0: 0.2
+x1: 1
+y1: 1
+=======================
+
+
+Output: ['x<=1', 'x>=1', 'y<=1', 'y>=0.2']
+Parsing equation: (5.00000000000000)*x+(-30.0000000000000)*y+1
+resulting thing: 5.0*x - 30.0*y + 1
+constraint_thing: ['x<=1', 'x>=0.4', 'y<=0.2', 'y>=0.1']
+Final equation: Eq(5.0*x - 30.0*y + 1, 0)
+Value of x: x
+Parsing equation: (-3.00000000000000)*x+(2.00000000000000)*y+1
+resulting thing: -3.0*x + 2.0*y + 1
+constraint_thing: ['x<=1', 'x>=0.4', 'y<=1', 'y>=0.1']
+Final equation: Eq(-3.0*x + 2.0*y + 1, 0)
+Value of x: x
+Parsing equation: (-1.00000000000000)*x+(0)*y+1
+resulting thing: 1 - 1.0*x
+constraint_thing: ['x<=1', 'x>=1', 'y<=1', 'y>=0.2']
+Final equation: Eq(1 - 1.0*x, 0)
+Value of x: x
+Circle equation bullshit: 
+((x)-(0.8))**2+((y)-(0.4))**2=(0.3)**2
+oof
+oof22
+equations: [[Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]], [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]], [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]], Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+Final plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+or_eq1 : [Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[[5*x - 30*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
+[-1, 5*x - 30*y]
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(5*x - 30*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(5*x - 30*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
+thing: [(0.648031893339682, 0.141338648889947), (1.02764378233599, 0.204607297055999)]
+poopoo
+current restriction: [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]
+substitution: {'x': 0.648031893339682, 'y': 0.141338648889947}
+current restriction: [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]
+substitution: {'x': 1.02764378233599, 'y': 0.204607297055999}
+or_eq1 : [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[[-3*x + 2*y + 1, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
+[-1, -3*x + 2*y]
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(-3*x + 2*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(-3*x + 2*y + 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
+thing: [(0.523076923076923, 0.284615384615385), (0.800000000000000, 0.700000000000000)]
+poopoo
+current restriction: [x <= 1, x >= 0.4, y <= 1, y >= 0.1]
+substitution: {'x': 0.523076923076923, 'y': 0.284615384615385}
+current restriction: [x <= 1, x >= 0.4, y <= 1, y >= 0.1]
+substitution: {'x': 0.800000000000000, 'y': 0.700000000000000}
+or_eq1 : [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]]
+plain_eqs: [Eq((x - 0.8)**2 + (y - 0.4)**2, 0.09)]
+[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]
+[x, y]
+[[1 - x, (x - 4/5)**2 + (y - 2/5)**2 - 9/100]]
+[1, x]
+[9/100, (x - 4/5)**2 + (y - 2/5)**2]
+[Poly(x - 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+[Poly(x - 1, x, y, domain='ZZ'), Poly(2500*x**2 - 4000*x + 2500*y**2 - 2000*y + 1775, x, y, domain='ZZ')]
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 1, y <= 1, y >= 0.2]]
+thing: [(1.00000000000000, 0.176393202250021), (1.00000000000000, 0.623606797749979)]
+poopoo
+current restriction: [x <= 1, x >= 1, y <= 1, y >= 0.2]
+substitution: {'x': 1.00000000000000, 'y': 0.176393202250021}
+current restriction: [x <= 1, x >= 1, y <= 1, y >= 0.2]
+substitution: {'x': 1.00000000000000, 'y': 0.623606797749979}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}][0m
+Command result: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}]
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}]
+Expected final result: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}]
+command_result: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}]
+expected_result: [{'x': 0.648031893339682, 'y': 0.141338648889947}, {'x': 0.523076923076923, 'y': 0.284615384615385}, {'x': 0.800000000000000, 'y': 0.700000000000000}, {'x': 1.00000000000000, 'y': 0.623606797749979}]
+[92mTestsuite tests/check_intersection_triangle_circle.txt passed![0m
+Running test check_integral.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_integral.txt.
+Command string: integrate y=x**2 x 1 3
+fewfeewfewfewf
+selected_expr: Eq(y, x**2)
+[-x**2 + y]
+[y]
+ok so it is a bare function and not a system of equations
+y_function: [x**2]
+[33mResult: 26/3[0m
+Command result: 26/3
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: 26/3
+Expected final result: 26/3
+command_result: 26/3
+expected_result: 26/3
+[92mTestsuite tests/check_integral.txt passed![0m
+Running test check_point_on_circle.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_point_on_circle.txt.
+Command string: point
+fewfeewfewfewf
+arguments: []
+object_name: point
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint.set_point_to_values 7 2
+thing
+bullshitrgregreg
+command: mypoint.set_point_to_values 7 2
+self.method_arg_types : [['float', 'float'], []]
+self.method_arg_types : [['float', 'float'], []]
+SHITSHITSHIT
+self.x == 7.0
+self.y == 2.0
+x_in: 7.0
+y_in: 2.0
+result: 0
+Command string: circle
+fewfeewfewfewf
+arguments: []
+object_name: circle
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == circle1
+setting parameter xc to this: xc1
+the_object.name == circle1
+setting parameter yc to this: yc1
+the_object.name == circle1
+setting parameter r to this: r1
+the_object.name == circle1
+setting parameter x to this: x1
+the_object.name == circle1
+setting parameter y to this: y1
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint', 'circle1']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint', 'circle1']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'circle0', 'mypoint', 'circle1']
+[92mCreated new object.[0m
+Command result: 0
+Command string: circle0.name = mycircle
+thing
+==================================================================================
+Setting property : name
+On object: circle0
+selected_property: name
+value: mycircle
+self.yc : 0.4
+result: None
+Command string: mycircle.xc = 10
+thing
+==================================================================================
+Setting property : xc
+On object: mycircle
+selected_property: xc
+value: 10
+self.yc : 0.4
+result: None
+Command string: mycircle.yc = 2
+thing
+==================================================================================
+Setting property : yc
+On object: mycircle
+selected_property: yc
+value: 2
+self.yc : 0.4
+result: None
+Command string: mycircle.r = 3
+thing
+==================================================================================
+Setting property : r
+On object: mycircle
+selected_property: r
+value: 3
+self.yc : 2
+result: None
+Command string: intersect mypoint mycircle
+fewfeewfewfewf
+Args : ['intersect', 'mypoint', 'mycircle']
+obj_name1 : mypoint
+obj_name2 : mycircle
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+---------------------------
+obj.name == myline1
+obj.name == myline2
+name_str: mycircle
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+obj.name == triangle0
+poopooo
+obj1: =======================
+Type: point
+x = 7.0
+y = 2.0
+name = mypoint
+=======================
+
+obj2: =======================
+Type: circle
+x0 = 10
+y0 = 2
+r = 3
+name = mycircle
+=======================
+		
+================================================
+object1 : =======================
+Type: point
+x = 7.0
+y = 2.0
+name = mypoint
+=======================
+
+object2 : =======================
+Type: circle
+x0 = 10
+y0 = 2
+r = 3
+name = mycircle
+=======================
+		
+object1 : <class '__main__.point'>
+object2 : <class '__main__.circle'>
+================================================
+left_side_1 : x
+right_side_1 : 7.0
+first_equation : Eq(x, 7.0)
+second_equation : Eq(y, 2.0)
+Circle equation bullshit: 
+((x)-(10))**2+((y)-(2))**2=(3)**2
+oof
+oof22
+All equations as a list: [Eq(x, 7.0), Eq(y, 2.0), Eq((x - 10)**2 + (y - 2)**2, 9)]
+[x - 7, y - 2, (x - 10)**2 + (y - 2)**2 - 9]
+[x, y]
+[x - 7, y - 2, (x - 10)**2 + (y - 2)**2 - 9]
+[x, y]
+[[x - 7, (x - 10)**2 + (y - 2)**2 - 9, y - 2]]
+[7, x]
+[2, y]
+[9, (x - 10)**2 + (y - 2)**2]
+[Poly(x - 7, x, y, domain='ZZ'), Poly(y - 2, x, y, domain='ZZ'), Poly(x**2 - 20*x + y**2 - 4*y + 95, x, y, domain='ZZ')]
+[Poly(x - 7, x, y, domain='ZZ'), Poly(y - 2, x, y, domain='ZZ'), Poly(x**2 - 20*x + y**2 - 4*y + 95, x, y, domain='ZZ')]
+result: [(7.00000000000000, 2.00000000000000)]
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: [(7.00000000000000, 2.00000000000000)][0m
+Results thing: [(7.00000000000000, 2.00000000000000)]
+Command result: {'x': 7.00000000000000, 'y': 2.00000000000000}
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: {'x': 7.00000000000000, 'y': 2.00000000000000}
+Expected final result: {'x': 7.00000000000000, 'y': 2.00000000000000}
+command_result: {'x': 7.00000000000000, 'y': 2.00000000000000}
+expected_result: {'x': 7.00000000000000, 'y': 2.00000000000000}
+[92mTestsuite tests/check_point_on_circle.txt passed![0m
+Running test check_min_output_dot_line.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_min_output_dot_line.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline
+result: None
+Command string: point
+fewfeewfewfewf
+arguments: []
+object_name: point
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint.set_point_to_values 0 0
+thing
+bullshitrgregreg
+command: mypoint.set_point_to_values 0 0
+self.method_arg_types : [['float', 'float'], []]
+self.method_arg_types : [['float', 'float'], []]
+SHITSHITSHIT
+self.x == 0.0
+self.y == 0.0
+x_in: 0.0
+y_in: 0.0
+result: 0
+Command string: mindistobjdot myline mypoint
+fewfeewfewfewf
+name_str: myline
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+dot_thing: =======================
+Type: point
+x = 0.0
+y = 0.0
+name = mypoint
+=======================
+
+object_thing: =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline
+=======================
+		
+oof
+oof22
+object_equation : [Eq(x + 2*y + 3, 0)]
+[x + 2*y + 0 + 3]
+[x]
+[x + 2*y + 0 + 3]
+[x]
+[[x + 2*y + 0 + 3]]
+[-2*y - 3, x]
+Matrix([[1, -2*y - 3]])
+[x + 2*y + 0 + 3]
+[y]
+[x + 2*y + 0 + 3]
+[y]
+[[x + 2*y + 0 + 3]]
+[-x/2 - 3/2, y]
+Matrix([[2, -x - 3]])
+sol_x : {x: -2*y - 3}
+sol_y : {y: -x/2 - 3/2}
+substitution: {x: -2*y - 3, y: -x/2 - 3/2}
+thing: {x: -2*y - 3, y: -x/2 - 3/2}
+bullshit ooof :::: sqrt((x-0.0)**2+(y-0.0)**2)
+distance_function : sqrt(x**2 + y**2)
+Substituted distance function: sqrt(x**2 + (-x/2 - 3/2)**2)
+f: sqrt(x**2 + (-x/2 - 3/2)**2)
+solution: 3*sqrt(5)/5
+distance_function : sqrt(x**2 + (-x/2 - 3/2)**2)
+Minimum distance: 3*sqrt(5)/5
+Command result: 3*sqrt(5)/5
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: 3*sqrt(5)/5
+Expected final result: 3*sqrt(5)/5
+command_result: 3*sqrt(5)/5
+expected_result: 3*sqrt(5)/5
+[92mTestsuite tests/check_min_output_dot_line.txt passed![0m
+Running test check_lines_angle.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_lines_angle.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = linefirst
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: linefirst
+result: None
+Command string: line a=4 b=5 c=6
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst']
+arguments: ['a=4', 'b=5', 'c=6']
+object_name: line
+{'a': '4', 'b': '5', 'c': '6'}
+*arguments_thing : {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+bullshit: {'a': '4', 'b': '5', 'c': '6'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = linesecond
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: linesecond
+result: None
+Command string: 
+Command string: angle_lines linefirst linesecond
+fewfeewfewfewf
+name_str: linefirst
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+obj.name == triangle0
+obj.name == mycircle
+obj.name == mypoint
+obj.name == circle1
+obj.name == myline
+obj.name == mypoint
+name_str: linesecond
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+obj.name == triangle0
+obj.name == mycircle
+obj.name == mypoint
+obj.name == circle1
+obj.name == myline
+obj.name == mypoint
+obj.name == linefirst
+[94mAngle between lines: -57.2957795130823*atan(1/2) + 57.2957795130823*atan(4/5) == 12.0947570770121[0m
+Command result: 12.0947570770121
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: 12.0947570770121
+Expected final result: 12.0947570770121
+command_result: 12.0947570770121
+expected_result: 12.0947570770121
+[92mTestsuite tests/check_lines_angle.txt passed![0m
+Running test check_line_triangle_intersection.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_line_triangle_intersection.txt.
+Command string: 
+Command string: triangle x0=0.4 y0=0.1 x1=1 y1=0.2 x2=1 y2=1
+fewfeewfewfewf
+arguments: ['x0=0.4', 'y0=0.1', 'x1=1', 'y1=0.2', 'x2=1', 'y2=1']
+object_name: triangle
+{'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+*arguments_thing : {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+bullshit: {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+bullshit: {'x0': '0.4', 'y0': '0.1', 'x1': '1', 'y1': '0.2', 'x2': '1', 'y2': '1'}
+the_object.name == triangle1
+setting parameter x0 to this: x01
+the_object.name == triangle1
+setting parameter y0 to this: y01
+the_object.name == triangle1
+setting parameter x1 to this: x11
+the_object.name == triangle1
+setting parameter y1 to this: y11
+the_object.name == triangle1
+setting parameter x2 to this: x21
+the_object.name == triangle1
+setting parameter y2 to this: y21
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+Command result: 0
+Command string: line a=0.1 b=1 c=-0.5
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+arguments: ['a=0.1', 'b=1', 'c=-0.5']
+object_name: line
+{'a': '0.1', 'b': '1', 'c': '-0.5'}
+*arguments_thing : {'a': '0.1', 'b': '1', 'c': '-0.5'}
+bullshit: {'a': '0.1', 'b': '1', 'c': '-0.5'}
+bullshit: {'a': '0.1', 'b': '1', 'c': '-0.5'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: intersect triangle0 line0
+fewfeewfewfewf
+Args : ['intersect', 'triangle0', 'line0']
+obj_name1 : triangle0
+obj_name2 : line0
+name_str: triangle0
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+line0
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+name_str: line0
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+line0
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline
+obj.name == mypoint
+obj.name == triangle0
+obj.name == mycircle
+obj.name == mypoint
+obj.name == circle1
+obj.name == myline
+obj.name == mypoint
+obj.name == linefirst
+obj.name == linesecond
+obj.name == triangle1
+poopooo
+obj1: <__main__.triangle object at 0x7f065a62cbe0>
+obj2: =======================
+Type: line
+a = 0.1
+b = 1
+c = -0.5
+name = line0
+=======================
+		
+================================================
+object1 : <__main__.triangle object at 0x7f065a62cbe0>
+object2 : =======================
+Type: line
+a = 0.1
+b = 1
+c = -0.5
+name = line0
+=======================
+		
+object1 : <class '__main__.triangle'>
+object2 : <class '__main__.line'>
+================================================
+Setting a to this: ((0.1)-(0.2))/((0.4*0.2)-(1*0.1))
+Line-equation thing: (5.00000000000000)*x+(-30.0000000000000)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+Setting a to this: ((0.1)-(1))/((0.4*1)-(1*0.1))
+Line-equation thing: (-3.00000000000000)*x+(2.00000000000000)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+Setting a to this: ((0.2)-(1))/((1*1)-(1*0.2))
+Line-equation thing: (-1.00000000000000)*x+(0)*y+1=0
+self.x0 : 0.4
+self.x0 : 0.1
+self.x1 : 1
+self.y1 : 0.2
+self.x2 : 1
+self.y2 : 1
+=======================
+
+
+oofthingaaaa
+x0: 0.4
+y0: 0.1
+x1: 1
+y1: 0.2
+=======================
+
+
+Output: ['x<=1', 'x>=0.4', 'y<=0.2', 'y>=0.1']
+=======================
+
+
+oofthingaaaa
+x0: 0.4
+y0: 0.1
+x1: 1
+y1: 1
+=======================
+
+
+Output: ['x<=1', 'x>=0.4', 'y<=1', 'y>=0.1']
+=======================
+
+
+oofthingaaaa
+x0: 1
+y0: 0.2
+x1: 1
+y1: 1
+=======================
+
+
+Output: ['x<=1', 'x>=1', 'y<=1', 'y>=0.2']
+Parsing equation: (5.00000000000000)*x+(-30.0000000000000)*y+1
+resulting thing: 5.0*x - 30.0*y + 1
+constraint_thing: ['x<=1', 'x>=0.4', 'y<=0.2', 'y>=0.1']
+Final equation: Eq(5.0*x - 30.0*y + 1, 0)
+Value of x: x
+Parsing equation: (-3.00000000000000)*x+(2.00000000000000)*y+1
+resulting thing: -3.0*x + 2.0*y + 1
+constraint_thing: ['x<=1', 'x>=0.4', 'y<=1', 'y>=0.1']
+Final equation: Eq(-3.0*x + 2.0*y + 1, 0)
+Value of x: x
+Parsing equation: (-1.00000000000000)*x+(0)*y+1
+resulting thing: 1 - 1.0*x
+constraint_thing: ['x<=1', 'x>=1', 'y<=1', 'y>=0.2']
+Final equation: Eq(1 - 1.0*x, 0)
+Value of x: x
+oof
+oof22
+equations: [[Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]], [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]], [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]], Eq(0.1*x + y - 0.5, 0)]
+Final plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
+or_eq1 : [Eq(5.0*x - 30.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
+plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
+[5*x - 30*y + 1, x/10 + y - 1/2]
+[x, y]
+[5*x - 30*y + 1, x/10 + y - 1/2]
+[x, y]
+[[5*x - 30*y + 1, x/10 + y - 1/2]]
+[-1, 5*x - 30*y]
+[1/2, x/10 + y]
+Matrix([[5, -30, -1], [1, 10, 5]])
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]]
+thing: {x: 1.75000000000000, y: 0.325000000000000}
+current restriction: [x <= 1, x >= 0.4, y <= 0.2, y >= 0.1]
+substitution: {x: 1.75000000000000, y: 0.325000000000000}
+or_eq1 : [Eq(-3.0*x + 2.0*y + 1, 0), [x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
+plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
+[-3*x + 2*y + 1, x/10 + y - 1/2]
+[x, y]
+[-3*x + 2*y + 1, x/10 + y - 1/2]
+[x, y]
+[[-3*x + 2*y + 1, x/10 + y - 1/2]]
+[-1, -3*x + 2*y]
+[1/2, x/10 + y]
+Matrix([[-3, 2, -1], [1, 10, 5]])
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 0.4, y <= 1, y >= 0.1]]
+thing: {x: 0.625000000000000, y: 0.437500000000000}
+current restriction: [x <= 1, x >= 0.4, y <= 1, y >= 0.1]
+substitution: {x: 0.625000000000000, y: 0.437500000000000}
+or_eq1 : [Eq(1 - 1.0*x, 0), [x <= 1, x >= 1, y <= 1, y >= 0.2]]
+plain_eqs: [Eq(0.1*x + y - 0.5, 0)]
+[1 - x, x/10 + y - 1/2]
+[x, y]
+[1 - x, x/10 + y - 1/2]
+[x, y]
+[[1 - x, x/10 + y - 1/2]]
+[1, x]
+[1/2, x/10 + y]
+Matrix([[1, 0, 1], [1, 10, 5]])
+Thing stuff: 
+restriction_thing: [[x <= 1, x >= 1, y <= 1, y >= 0.2]]
+thing: {x: 1.00000000000000, y: 0.400000000000000}
+current restriction: [x <= 1, x >= 1, y <= 1, y >= 0.2]
+substitution: {x: 1.00000000000000, y: 0.400000000000000}
+[33mObjects intersect atleast at one point.[0m
+[33mIntersections are at points: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}][0m
+Command result: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+Expected final result: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+command_result: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+expected_result: [{x: 0.625000000000000, y: 0.437500000000000}, {x: 1.00000000000000, y: 0.400000000000000}]
+[92mTestsuite tests/check_line_triangle_intersection.txt passed![0m
+Running test check_area_between_intersections.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_area_between_intersections.txt.
+Command string: 
+Command string: line a=4 b=-2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+arguments: ['a=4', 'b=-2', 'c=3']
+object_name: line
+{'a': '4', 'b': '-2', 'c': '3'}
+*arguments_thing : {'a': '4', 'b': '-2', 'c': '3'}
+bullshit: {'a': '4', 'b': '-2', 'c': '3'}
+bullshit: {'a': '4', 'b': '-2', 'c': '3'}
+the_object.name == line3
+setting parameter a to this: a3
+the_object.name == line3
+setting parameter b to this: b3
+the_object.name == line3
+setting parameter c to this: c3
+the_object.name == line3
+setting parameter x to this: x3
+the_object.name == line3
+setting parameter y to this: y3
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0', 'line3']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0', 'line3']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0', 'line3']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'line0', 'line3']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline
+result: None
+Command string: area_between_intersections myline y=x**2-10*x+10
+fewfeewfewfewf
+name_str: myline
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+myline
+line3
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+oof
+oof22
+[x + 2*y + 0 + 3, -x**2 + 10*x + y - 10]
+[x, y]
+[x + 2*y + 0 + 3, -x**2 + 10*x + y - 10]
+[x, y]
+[[x + 2*y + 0 + 3, -x**2 + 10*x + y - 10]]
+[-3, x + 2*y]
+[10, -x**2 + 10*x + y]
+[Poly(x + 2*y + 3, x, y, domain='ZZ'), Poly(-x**2 + 10*x + y - 10, x, y, domain='ZZ')]
+[Poly(x + 2*y + 3, x, y, domain='ZZ'), Poly(-x**2 + 10*x + y - 10, x, y, domain='ZZ')]
+intersection_points == [(19/4 - sqrt(177)/4, -31/8 + sqrt(177)/8), (sqrt(177)/4 + 19/4, -31/8 - sqrt(177)/8)]
+thingoof intersection_x_values ==
+[x + 2*y + 0 + 3]
+[y]
+ok so it is a bare function and not a system of equations
+[-x**2 + 10*x + y - 10]
+[y]
+ok so it is a bare function and not a system of equations
+functions_in_y_format == [[-x/2 - 3/2], [x**2 - 10*x + 10]]
+bigger function: -x/2 - 3/2
+smaller_fun : x**2 - 10*x + 10
+intersection_x_values[0] == 19/4 - sqrt(177)/4
+intersection_x_values[1] == sqrt(177)/4 + 19/4
+[33mArea: -(sqrt(177)/4 + 19/4)**3/3 - 23*sqrt(177)/4 - 19*(19/4 - sqrt(177)/4)**2/4 + (19/4 - sqrt(177)/4)**3/3 + 19*(sqrt(177)/4 + 19/4)**2/4[0m
+Command result: -(sqrt(177)/4 + 19/4)**3/3 - 23*sqrt(177)/4 - 19*(19/4 - sqrt(177)/4)**2/4 + (19/4 - sqrt(177)/4)**3/3 + 19*(sqrt(177)/4 + 19/4)**2/4
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: -(sqrt(177)/4 + 19/4)**3/3 - 23*sqrt(177)/4 - 19*(19/4 - sqrt(177)/4)**2/4 + (19/4 - sqrt(177)/4)**3/3 + 19*(sqrt(177)/4 + 19/4)**2/4
+Expected final result: -(sqrt(110)/2 + 6)**3/3 - 17*sqrt(110)/2 - 6*(6 - sqrt(110)/2)**2 + (6 - sqrt(110)/2)**3/3 + 6*(sqrt(110)/2 + 6)**2
+command_result: -(sqrt(177)/4 + 19/4)**3/3 - 23*sqrt(177)/4 - 19*(19/4 - sqrt(177)/4)**2/4 + (19/4 - sqrt(177)/4)**3/3 + 19*(sqrt(177)/4 + 19/4)**2/4
+expected_result: -(sqrt(110)/2 + 6)**3/3 - 17*sqrt(110)/2 - 6*(6 - sqrt(110)/2)**2 + (6 - sqrt(110)/2)**3/3 + 6*(sqrt(110)/2 + 6)**2
+[91mTestsuite tests/check_area_between_intersections.txt failed![0m
+Running test check_min_dist_point_line.txt
+Welcome to geometrylib 1.0 !
+Type "help" for help menu.
+Testsuite from file tests/check_min_dist_point_line.txt.
+Command string: line a=1 b=2 c=3
+fewfeewfewfewf
+objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3']
+arguments: ['a=1', 'b=2', 'c=3']
+object_name: line
+{'a': '1', 'b': '2', 'c': '3'}
+*arguments_thing : {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+bullshit: {'a': '1', 'b': '2', 'c': '3'}
+the_object.name == line0
+setting parameter a to this: a0
+the_object.name == line0
+setting parameter b to this: b0
+the_object.name == line0
+setting parameter c to this: c0
+the_object.name == line0
+setting parameter x to this: x0
+the_object.name == line0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'line0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'line0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'line0']
+objects at the end: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'line0']
+[92mCreated new object.[0m
+Command result: 0
+Command string: line0.name = myline
+thing
+==================================================================================
+Setting property : name
+On object: line0
+selected_property: name
+value: myline
+result: None
+Command string: point
+fewfeewfewfewf
+arguments: []
+object_name: point
+{}
+*arguments_thing : {}
+bullshit: {}
+bullshit: {}
+the_object.name == point0
+setting parameter x to this: x0
+the_object.name == point0
+setting parameter y to this: y0
+Names of global objects at the end of common_arg_stuff: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline']
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline']
+objects after creation of new_object : ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline']
+gregregregrr
+global_objects at the start: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'point0']
+objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'point0']
+global_objects after appending new_object: ['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'point0']
+Command result: 0
+Command string: point0.name = mypoint
+thing
+==================================================================================
+Setting property : name
+On object: point0
+selected_property: name
+value: mypoint
+result: None
+Command string: mypoint.set_point_to_values 0 0
+thing
+bullshitrgregreg
+command: mypoint.set_point_to_values 0 0
+self.method_arg_types : [['float', 'float'], []]
+self.method_arg_types : [['float', 'float'], []]
+SHITSHITSHIT
+self.x == 0.0
+self.y == 0.0
+x_in: 0.0
+y_in: 0.0
+result: 0
+Command string: mindistpointobjdot myline mypoint
+fewfeewfewfewf
+name_str: myline
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+myline
+line3
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+myline
+line3
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+dot_thing: =======================
+Type: point
+x = 0.0
+y = 0.0
+name = mypoint
+=======================
+
+object_thing: =======================
+Type: line
+a = 1
+b = 2
+c = 3
+name = myline
+=======================
+		
+oof
+oof22
+object_equation : [Eq(x + 2*y + 3, 0)]
+[x + 2*y + 0 + 3]
+[x]
+[x + 2*y + 0 + 3]
+[x]
+[[x + 2*y + 0 + 3]]
+[-2*y - 3, x]
+Matrix([[1, -2*y - 3]])
+[x + 2*y + 0 + 3]
+[y]
+[x + 2*y + 0 + 3]
+[y]
+[[x + 2*y + 0 + 3]]
+[-x/2 - 3/2, y]
+Matrix([[2, -x - 3]])
+sol_x : {x: -2*y - 3}
+sol_y : {y: -x/2 - 3/2}
+substitution: {x: -2*y - 3, y: -x/2 - 3/2}
+thing: {x: -2*y - 3, y: -x/2 - 3/2}
+bullshit ooof :::: sqrt((x-0.0)**2+(y-0.0)**2)
+distance_function : sqrt(x**2 + y**2)
+Substituted distance function: sqrt(x**2 + (-x/2 - 3/2)**2)
+f: sqrt(x**2 + (-x/2 - 3/2)**2)
+solution: 3*sqrt(5)/5
+distance_function : sqrt(x**2 + (-x/2 - 3/2)**2)
+Minimum distance: 3*sqrt(5)/5
+name_str: mypoint
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+myline
+line3
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+name_str: myline
+['myline1', 'myline2', 'mypoint', 'myline1', 'line1', 'line2', 'myline2', 'mypoint', 'myline', 'mypoint', 'triangle0', 'mycircle', 'mypoint', 'circle1', 'myline', 'mypoint', 'linefirst', 'linesecond', 'triangle1', 'myline', 'line3', 'myline', 'mypoint']
+---------------------------
+myline1
+myline2
+mypoint
+myline1
+line1
+line2
+myline2
+mypoint
+myline
+mypoint
+triangle0
+mycircle
+mypoint
+circle1
+myline
+mypoint
+linefirst
+linesecond
+triangle1
+myline
+line3
+myline
+mypoint
+---------------------------
+obj.name == myline1
+obj.name == myline2
+obj.name == mypoint
+obj.name == myline1
+obj.name == line1
+obj.name == line2
+obj.name == myline2
+obj.name == mypoint
+oof
+oof22
+radiuses : 3*sqrt(5)/5
+Returning this: (x-0.0)**2+(y-0.0)**2=(3*sqrt(5)/5)**2
+circle_equation : [Eq(x**2 + y**2, 9/5)]
+all equations: [Eq(x + 2*y + 3, 0), Eq(x**2 + y**2, 9/5)]
+[x + 2*y + 0 + 3, x**2 + y**2 - 9/5]
+[x, y]
+[x + 2*y + 0 + 3, x**2 + y**2 - 9/5]
+[x, y]
+[[x + 2*y + 0 + 3, x**2 + y**2 - 9/5]]
+[-3, x + 2*y]
+[9/5, x**2 + y**2]
+[Poly(x + 2*y + 3, x, y, domain='ZZ'), Poly(5*x**2 + 5*y**2 - 9, x, y, domain='ZZ')]
+[Poly(x + 2*y + 3, x, y, domain='ZZ'), Poly(5*x**2 + 5*y**2 - 9, x, y, domain='ZZ')]
+Result: [(-3/5, -6/5)]
+Resulting dict: {'x': -3/5, 'y': -6/5}
+oofstring1: -3/5
+oofstring2: -6/5
+oofstring1 after: -3/5
+oofstring2 after: -6/5
+final_dict: {'x': '-3/5', 'y': '-6/5'}
+Command result: {'x': '-3/5', 'y': '-6/5'}
+Command string: quit
+"quit" encountered in testsuite. Checking answer:
+The output of the last command: {'x': '-3/5', 'y': '-6/5'}
+Expected final result: {'x': '-3/5', 'y': '-6/5'}
+command_result: {'x': '-3/5', 'y': '-6/5'}
+expected_result: {'x': '-3/5', 'y': '-6/5'}
+[92mTestsuite tests/check_min_dist_point_line.txt passed![0m
+results list: [True, True, True, True, True, True, True, True, True, True, False, True]
+[94m=================================================
+
+[0m
+[94mFinal results: 
+[0m
+[92mTest: tests/check_var_assignment_to_function_result.txt PASSED![0m
+[92mTest: tests/check_line_intersect.txt PASSED![0m
+[92mTest: tests/check_var_subsequences.txt PASSED![0m
+[92mTest: tests/check_max_output_dot_line.txt PASSED![0m
+[92mTest: tests/check_intersection_triangle_circle.txt PASSED![0m
+[92mTest: tests/check_integral.txt PASSED![0m
+[92mTest: tests/check_point_on_circle.txt PASSED![0m
+[92mTest: tests/check_min_output_dot_line.txt PASSED![0m
+[92mTest: tests/check_lines_angle.txt PASSED![0m
+[92mTest: tests/check_line_triangle_intersection.txt PASSED![0m
+[91mTest: tests/check_area_between_intersections.txt FAILED![0m
+[92mTest: tests/check_min_dist_point_line.txt PASSED![0m
+
+
+
+[91mSome tests failed!
+
+[0m
+[94m=================================================[0m
