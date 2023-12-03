@@ -1,6 +1,6 @@
 
 
-import numpy as np
+
 import sympy
 from sympy.parsing.sympy_parser import parse_expr
 import sys
@@ -13,7 +13,7 @@ import readline
 from sympy.calculus.util import *
 import random
 import os
-
+import copy
 
 global_things = []
 global_objects = []
@@ -768,6 +768,15 @@ class line:
 		#self.a = simplify(-(yv/(x0*yv-xv*y0)))
 		#self.b = simplify(xv/(x0*yv-xv*y0))
 
+
+
+	def get_left_side(self):
+		equation = "("+str(self.a)+")*"+"x"+"+("+str(self.b)+")*"+"y"+"+("+str(self.c)+")"
+		#right_side = "0"
+		if self.debug:
+			print(equation)
+		equation_left_side = parse_expr(equation)
+		return equation_left_side
 
 	def get_equations(self):
 		# returns the line in the a*x+b*y+c = 0 format
@@ -2244,12 +2253,335 @@ def get_tangent_from_point_and_derivative(x0thing,fx0):
 
 
 
+def is_same_line(line1:object, line2:object):
+
+	# get_left_side
+	equation1 = line1.get_left_side()
+	equation2 = line2.get_left_side()
+
+	t = Symbol('t')
+
+	other_side = equation1*t
+
+	solutions = solve(other_side,equation2) # if solution exists, then the lines are the same, because the other line is a linear scaling of the other line aka a1*x+b1*y+c1=t*(a2*x2*y+c2)
+
+	if len(solutions) <= 0:
+		return False # no solutions
+	else:
+		return True
+
+
+# lines = get_lines(derivatives, point_list)
+def get_lines(derivatives, point_list, var_list):
+	
+	if len(derivatives) != len(point_list):
+
+		fail("Length of derivatives must be the same as length of given points.")
+		print("derivatives: "+str(derivatives))
+		print("point_list: "+str(point_list))
+		exit(1)
+	return_lines = []
+	for i in range(len(derivatives)):
+
+		# the line is y-y1=m*(x-x1) so y = m*(x-x1)+y1
+
+		expression = parse_expr("(m)*(x-(a))+(b)")
+
+		return_lines.append(simplify(expression.subs({"m":derivatives[i], "a":var_list[i], "b":point_list[i]})))
+
+	print("return_lines: "+str(return_lines))
+
+	return return_lines
+
+
+
+
+
+def run_through_list(listthing:list):
+	# listthing is basically [[obj1,obj2], [obj3, obj4], [obj5, obj6, obj7] .....] and we run an operation for every thing in each list.
+
+	final_list = []
+	poopoo = []
+	if len(listthing) <= 0:
+		return 0 # empty list or error
+	
+	elif len(listthing) == 1:
+		return 0 # can not do if len is one
+	
+	else:
+
+		operation_thing = listthing[0]
+
+		counter = 1
+		
+		while counter < len(listthing)-1: # ignore last entry because it is the object equations
+
+			resulting_list = []
+			counter1 = 0
+			#poopoo = []
+			for thing1 in operation_thing:
+				counter2 = 0
+
+				for thing2 in listthing[counter]:
+
+					# get the solutions which solve both thing and thing2
+
+					# thing and thing2 are assumed to be lines
+
+					x = Symbol('x')
+					y = Symbol('y')
+					t = Symbol('t')
+
+					#if len(final_list) != 0:
+					poopoo = []
+					if counter != 1:
+
+						# we have already calculated the tangents. This part just checks the tangent lines are tangent to the other objects.
+
+						# the tangents are stored in final_list
+						resulting_list = []
+						print("final_list == "+str(final_list))
+						for tangent in final_list:
+
+
+							object_equations = []
+							for obj in listthing[-1][counter:]:
+
+								for eq in obj:
+									object_equations.append(eq)
+
+							append = False
+							for eq in object_equations:
+								# run through all of the equations 
+								print("eq == "+str(eq))
+								print("tangent == "+str(tangent))
+								if isinstance(tangent, list) or isinstance(tangent, tuple):
+									tangent = tangent[0]
+								print("eq == "+str(eq))
+
+								eqs_y = solve(eq, y)
+								tangent_y = tangent
+
+								stuff = []
+								for y_eq in eqs_y:
+									print("oof y_eq == "+str(y_eq))
+									print("oof tangent == "+str(tangent))
+									#if solve([Eq(y_eq,y),Eq(tangent,y)],x) == []:
+									if solve([Eq(y_eq,tangent)],x) == []:
+										# solution does not exist
+										stuff.append(False)
+									else:
+
+										# Check that the derivative is the same
+										print("Shitoooofffffffffffff")
+										solution_points = solve([Eq(y_eq,tangent)], x)
+										oof = False
+										for sol in solution_points:
+											if isinstance(sol, tuple):
+												sol = sol[0]
+											tangent_der = simplify(Derivative(tangent_y, x))
+											print("y_eq == "+str(y_eq))
+											print("peepeepoopoo")
+											y_eq_der = simplify(Derivative(y_eq, x))
+											print("tangent_der.subs({\"x\":sol}) == "+str(tangent_der.subs({"x":sol})))
+											print("y_eq_der == "+str(y_eq_der))
+											print("sol == "+str(sol))
+											print("y_eq_der.subs({\"x\":sol}) == "+str(y_eq_der.subs({"x":sol})))
+
+											if not tangent_der.subs({"x":sol}) != y_eq_der.subs({"x":sol}):
+												append = True
+												oof = True
+												print("111111111111111111111111111111111111111")
+												break
+										append = oof
+
+										#stuff.append(True)
+								if True in stuff:
+									print("True in stuff")
+									print("stuff == "+str(stuff))
+									append = True
+							if append:
+								resulting_list.append(tangent)
+						print("Final result : "+str(resulting_list))
+						return resulting_list
+
+
+
+					print("thing1: "+str(thing1))
+					print("thing2: "+str(thing2))
+
+					#equation1 = thing1.get_left_side().subs({"x":"x0","y":"y0"})
+					print("thing1 == "+str(thing1))
+					print("solve(Eq(thing1, 0), ('y')) == "+str(solve(Eq(thing1, 0), ('y'))))
+					#thing_y_1 = solve(Eq(thing1, 0), ('y'))[0]
+					#thing_y_2 = solve(Eq(thing2, 0), ('y'))[0]
+
+
+					#thing_y_1 = listthing[-1][0][0]
+					#thing_y_2 = listthing[-1][1][0]
+					print("shitpoop: "+str(listthing[-1][1]))
+					print("shitpoop: "+str(listthing[-1][0]))
+					thing_y_1 = listthing[-1][0][0]
+					thing_y_2 = listthing[-1][1][0]
+
+					#print("poopoopooo")
+					thing_y_1 = solve(thing_y_1, 'y')[counter1]
+					thing_y_2 = solve(thing_y_2, 'y')[counter2]
+					#print(thing_y_1)
+					#print(thing_y_2)
+
+					# get derivatives with respect to x
+
+
+					# This shit won't work. See this : https://github.com/sympy/sympy/issues/25057   :)
+
+					#derivative_1 = Derivative(thing_y_1, x)
+					#derivative_2 = Derivative(thing_y_2, x)
+
+					derivative_1 = simplify(Derivative(thing_y_1, x))
+					derivative_2 = simplify(Derivative(thing_y_2, x))
+
+
+
+
+					equation1 = simplify(thing1.subs({"x":"x0","y":"y0"}))
+
+					#equation2 = thing2.get_left_side().subs({"x":"x1","y":"y1"})
+					equation2 = simplify(thing2.subs({"x":"x1","y":"y1"}))
+
+
+
+					# the derivatives at those points must match (the tangents must have the same slope obviously)
+
+					print("derivative_1 ==" +str(derivative_1) )
+					print("derivative_2 ==" +str(derivative_2) )
+
+					equation_list = [Eq(derivative_1.subs({"x":"x0","y":"y0"}), derivative_2.subs({"x":"x1","y":"y1"}))]
+
+					#derivatives = [Eq(derivative_1.subs({"x":"x0","y":"y0"}), derivative_2.subs({"x":"x1","y":"y1"}))]
+
+					derivatives = [derivative_1.subs({"x":"x0","y":"y0"}), derivative_2.subs({"x":"x1","y":"y1"})]
+
+					point_list = [equation1, equation2]
+
+					# generate the tangents which have the derivative derivates[n] and which goes through point (x_n, point_list[n])
+
+					var_list = ["x0", "x1"]
+					print("Passing derivatives: "+str(derivatives))
+					lines = get_lines(derivatives, point_list, var_list)
+
+
+
+					# the lines must pass through the point of the other tangent
+
+
+					#print("equation1 == "+str(equation1))
+					#print("equation2 == "+str(equation2))
+
+					#another_list = [Eq(equation1.subs({"x":"x1","y":"y1"},0)), Eq(equation2.subs({"x":"x0","y":"y0"}),0)] 
+					# thing_y_1
+
+					print("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
+					print(thing_y_1)
+					print(thing_y_2)
+
+
+					#another_list = [Eq(thing_y_1.subs({"x":"x1","y":"y1"}),y), Eq(thing_y_2.subs({"x":"x0","y":"y0"}),y)] 
+
+					#another_list = [Eq(thing_y_1.subs({"x":"x1","y":"y1"}), thing_y_2.subs({"x":"x0","y":"y0"}))] 
+
+					#another_list = [Eq(lines[0].subs({"x0":"a"}), lines[1].subs({"x1":"a"}))]
+
+					another_list = [Eq(simplify(lines[0]), simplify(lines[1]))]
+
+
+					print("lines[0] == "+str(lines[0]))
+					print("lines[1] == "+str(lines[1]))
+
+
+
+					#m = Symbol('m')
+					#b = Symbol('b')
+
+					#solve(Eq(Derivative(-sqrt(1 - x0**2), x0), Derivative(-sqrt(-(x1 - 3)*(x1 - 1)), x1)))
+
+					#first_line = thing_y_1 - parse_expr("m*x+b")
+					#second_line = thing_y_2 - parse_expr("m*x+b")
+					#print("==========================================")
+					#print(first_line)
+					#print(second_line)
+
+					#equation_shit = [Eq(sympy.discriminant(first_line),0), Eq(sympy.discriminant(second_line), 0)]
+					#print("first discriminant: "+str(sympy.discriminant(first_line)))
+					#equation_list = equation_list + another_list
+					#all_equations = equation_list + another_list
+					print("equation_list: "+str(equation_list))
+					#all_equations = equation_list+another_list
+
+
+					# 
+
+					all_equations = equation_list + another_list
+
+					#print("Trying to solve the equation: "+str(Eq(parse_expr("t*("+str(equation2)+")"),equation1)))
+					print("pppppppppppppppppppppppppppppppppp")
+					print("all_equations == "+str(all_equations))
+					#solutions = solve(all_equations, ('x0','y0','x1', 'y1'))
+					solutions = solve(all_equations, ('x0','x1'))
+
+					#print("Solutions poopoo: "+str(solutions))
+					print("Solution stuff: "+str(solutions))
+					print("type(solutions) == "+str(type(solutions)))
+
+					for sol in solutions:
+
+
+						#substitution_stuff = {"x0":sol[0], "y0":sol[1], "x1":sol[2], "y1":sol[3]}
+
+						substitution_stuff = {"x0":sol[0], "x1":sol[1]}
+						#t_val = solutions[0][0]
+
+						#print("value of t: "+str(t_val))
+						#print("substiting:")
+						#a = 0.0
+						#b = 1.5
+						#c = 0.3
+						#d = 0.3
+
+						#value_thing = t_val.subs({"x0":a, "x1":b, "y0":c, "y1":d})
+						#print("value_thing: "+str(value_thing))
+						print("substitution_stuff == "+str(substitution_stuff))
+
+						#final_list.append(lines[0].subs(substitution_stuff))
+
+						final_list.append([lines[0].subs(substitution_stuff)])
+
+						#print("poopoofefewfw:"+str(final_list[-1].subs({"x":1})))
+						print("Solution stuffrrrrrrrrrrrrrrrr: "+str(final_list))
+					print("Final list after: "+str(final_list))
+					counter2 += 1
+				counter1 += 1
+
+			counter += 1
+
+		print("Final solutions: "+str(final_list))
+		print("tttttttttttttttttttttttttttttttttttttttt")
+		print(final_list)
+		return final_list
+
+
+
+
+			
 
 
 
 def get_tangents(objects:list):
 
 	# get the tangentlines which are shared by all the objects (if there exists any)
+	if len(objects) <= 0:
+		fail("Invalid number of arguments!")
+		return 1
 
 	if len(objects) == 1:
 		
@@ -2280,16 +2612,62 @@ def get_tangents(objects:list):
 
 				print("y_eq: "+str(y_eq))
 				print("equation_list: "+str(equation_list))
-
+				print("tttttttttttttttttttttttt")
 				tangent = get_tangent_from_point_and_derivative(x0,y_eq.subs({"x":x0}))
-
+				print("shitoooffff")
 				tangent = tangent.subs({"xnew":x0})
 
 				tangent_lines.append(tangent)
 		
 		return tangent_lines
 
+	else:
 
+		# handle many objects.
+
+		all_tangents = []
+		counter = 0
+		poopoo_eqs = []
+		for obj in objects:
+			#obj = objects[0]
+
+			equation_list = obj.get_equations()
+			poopoo_eqs.append(equation_list)
+			# first solve y from the equation
+
+			#y_eqs = []
+			
+			tangent_lines = []
+			for eq in equation_list:
+
+				y_eqs = solve(eq, 'y')
+
+				for y_eq in y_eqs:
+
+
+					#k = simplify(derivative(y_eq, x))
+
+					x0 = Symbol('x'+str(counter))
+
+					print("y_eq: "+str(y_eq))
+					print("equation_list: "+str(equation_list))
+					print("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
+					tangent = get_tangent_from_point_and_derivative(x0,y_eq.subs({"x":x0}))
+					print("fnjrnjgkrejgnregrrrr")
+					tangent = tangent.subs({"xnew":x0})
+
+					tangent_lines.append(tangent)
+			
+			all_tangents.append(tangent_lines)
+			counter += 1
+			#return tangent_lines
+		all_tangents.append(poopoo_eqs)
+
+		# check to see if there is a tangent which is also tangent to the other object.
+		print("Running run_through_list: ")
+		run_through_list(all_tangents)
+
+		
 
 
 

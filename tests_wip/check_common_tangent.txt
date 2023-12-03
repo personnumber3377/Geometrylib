@@ -1,0 +1,10 @@
+
+circle xc=0 yc=0 r=1
+circle0.name = circleone
+circle xc=2 yc=0 r=1
+circle0.name = circletwo
+
+tangents circleone circletwo
+quit
+
+
