@@ -1,0 +1,11 @@
+point
+point0.name = firstlinepoint
+point
+point0.name = secondlinepoint
+firstlinepoint.set_point_to_values r0-1 r0+2
+secondlinepoint.set_point_to_values r0 r0
+line
+line0.name = helperline
+helperline.set_values_two_points firstlinepoint secondlinepoint
+circle xc=0 yc=0 r=r0
+intersect circle0 helperline

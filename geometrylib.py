@@ -109,7 +109,12 @@ class point:
 				arguments_for_method.append(object_itself)
 			else:
 				# assumed to be a constant:
-				arguments_for_method.append(float(arguments[i]))
+				#arguments_for_method.append(float(arguments[i]))
+
+				if is_expr(arguments[i]):
+					arguments_for_method.append(parse_expr(arguments[i]))
+				else:
+					arguments_for_method.append(float(arguments[i]))
 
 		# call the method with the arguments:
 
@@ -300,7 +305,12 @@ class triangle:
 				arguments_for_method.append(object_itself)
 			else:
 				# assumed to be a constant:
-				arguments_for_method.append(float(arguments[i]))
+				#arguments_for_method.append(float(arguments[i]))
+
+				if is_expr(arguments[i]):
+					arguments_for_method.append(parse_expr(arguments[i]))
+				else:
+					arguments_for_method.append(float(arguments[i]))
 
 		# call the method with the arguments:
 
@@ -573,6 +583,17 @@ def common_arg_stuff(the_object, *arguments_thing):
 		#	setattr(the_object, str(param), final_arguments[param])  # this was done in the earlier loop
 	print("Names of global objects at the end of common_arg_stuff: " + str(get_names(global_objects)))
 
+def is_expr(string:str) -> bool:
+	float_stuff = "0123456789." # These are all which are used to represent a float
+
+	for char in string:
+		if char not in float_stuff:
+			# The argument is not a float. return true , because therefore the string is actually an expression
+			return True
+	return False
+
+
+
 class line:
 	#def __init__(self,a="unknown",b="unknown",c="unknown", name="line"):
 	def __init__(self,*arguments):
@@ -694,10 +715,15 @@ class line:
 		print("type(point1.x) == "+str(type(point1.x)))
 
 
-		point1.x = float(point1.x)
-		point1.y = float(point1.y)
-		point2.x = float(point2.x)
-		point2.y = float(point2.y)
+		#point1.x = float(point1.x)
+		#point1.y = float(point1.y)
+		#point2.x = float(point2.x)
+		#point2.y = float(point2.y)
+
+		#point1.x = parse_expr(point1.x)
+		#point1.y = parse_expr(point1.y)
+		#point2.x = parse_expr(point2.x)
+		#point2.y = parse_expr(point2.y)
 
 		line_vector_x = -1*point1.x+point2.x
 		line_vector_y = -1*point1.y+point2.y
@@ -823,7 +849,13 @@ class line:
 				arguments_for_method.append(object_itself)
 			else:
 				# assumed to be a constant:
-				arguments_for_method.append(float(arguments[i]))
+				#arguments_for_method.append(float(arguments[i]))
+				# do NOT assume a constant. check if it is an expression first.
+
+				if is_expr(arguments[i]):
+					arguments_for_method.append(parse_expr(arguments[i]))
+				else:
+					arguments_for_method.append(float(arguments[i]))
 
 		# call the method with the arguments:
 
